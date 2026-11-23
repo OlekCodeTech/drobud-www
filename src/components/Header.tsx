@@ -13,8 +13,8 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur">
-      <div className="container-x flex h-[4.5rem] items-center justify-between gap-6">
-        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)} aria-label="DroBud — strona główna">
+      <div className="container-x flex h-[4.5rem] items-center justify-between gap-4 xl:gap-6">
+        <Link href="/" className="flex shrink-0 items-center gap-3" onClick={() => setOpen(false)} aria-label="DroBud — strona główna">
           <Image src="/sygnet-drobud.png" alt="" width={538} height={445} priority className="h-11 w-auto" />
           <span className="leading-none">
             <span className="block text-xl font-bold tracking-[0.14em]">DROBUD</span>
@@ -24,32 +24,29 @@ export function Header() {
           </span>
         </Link>
 
-        <nav aria-label="Główna" className="hidden items-center gap-7 lg:flex">
+        <nav aria-label="Główna" className="hidden items-center gap-5 xl:flex">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               aria-current={pathname.startsWith(item.href) ? "page" : undefined}
-              className="text-sm font-semibold text-ink/75 hover:text-ink aria-[current=page]:text-accent-dark"
+              className="whitespace-nowrap text-sm font-semibold text-ink/75 hover:text-ink aria-[current=page]:text-accent-dark"
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
-          <div className="hidden 2xl:block">
-            <SocialLinks size="sm" />
-          </div>
-          <a href={site.phoneHref} className="hidden whitespace-nowrap text-sm font-bold sm:block lg:hidden xl:block">
+        <div className="flex shrink-0 items-center gap-3">
+          <a href={site.phoneHref} className="hidden whitespace-nowrap text-sm font-bold sm:block xl:hidden 2xl:block">
             {site.phone}
           </a>
-          <Link href="/wycena/" className="btn-primary px-5 py-2.5">
+          <Link href="/wycena/" className="btn-gold whitespace-nowrap px-5 py-2.5">
             Wycena
           </Link>
           <button
             type="button"
-            className="-mr-2 p-2 lg:hidden"
+            className="-mr-2 p-2 xl:hidden"
             aria-expanded={open}
             aria-controls="menu-mobilne"
             aria-label={open ? "Zamknij menu" : "Otwórz menu"}
@@ -63,7 +60,7 @@ export function Header() {
       </div>
 
       {open && (
-        <nav id="menu-mobilne" aria-label="Mobilna" className="border-t border-line lg:hidden">
+        <nav id="menu-mobilne" aria-label="Mobilna" className="max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-line bg-white xl:hidden">
           <ul className="container-x py-3">
             {nav.map((item) => (
               <li key={item.href}>

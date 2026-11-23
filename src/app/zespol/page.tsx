@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { awards, team, videos } from "@/data/content";
-import { brands, site } from "@/data/site";
+import { site } from "@/data/site";
+import { BrandLogos } from "@/components/BrandLogos";
 import { Cta, PageHero, Section } from "@/components/ui";
 import { Awards, VideoGrid } from "@/components/media";
 
@@ -66,16 +67,7 @@ export default function Page() {
       </Section>
 
       <Section tone="paper" eyebrow="Sprzęt" title="Pracujemy na profesjonalnym sprzęcie">
-        <ul className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {brands.map((b) => (
-            <li
-              key={b}
-              className="flex h-24 items-center justify-center rounded-2xl border border-line bg-white text-xl font-extrabold text-ink/70"
-            >
-              {b}
-            </li>
-          ))}
-        </ul>
+        <BrandLogos />
       </Section>
 
       <Section eyebrow="Praca" title="Chcesz dołączyć do ekipy?">

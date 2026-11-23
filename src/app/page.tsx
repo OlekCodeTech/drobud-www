@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { brands, process_, site } from "@/data/site";
+import { process_, site } from "@/data/site";
+import { BrandLogos } from "@/components/BrandLogos";
 import { services } from "@/data/services";
 import { awards, cities, projects, reviews, videos } from "@/data/content";
 import { homeContent } from "@/data/home-content";
@@ -155,9 +156,8 @@ export default function Home() {
             </li>
           ))}
         </ul>
-        <p className="mt-6 text-sm text-muted">
-          Pracujemy na profesjonalnym sprzęcie: <strong className="text-ink">{brands.join(", ")}</strong>.
-        </p>
+        <p className="mb-4 mt-8 text-sm font-bold">Pracujemy na profesjonalnym sprzęcie:</p>
+        <BrandLogos compact />
       </Section>
 
       <Section tone="paper" eyebrow="Współpraca" title="Jak pracujemy">
