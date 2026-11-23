@@ -242,13 +242,19 @@ export function Faq({ items }: { items: { q: string; a: string }[] }) {
   );
 }
 
-/** Dłuższa treść merytoryczna: bloki H2 + akapity w dwóch kolumnach, na pełnej szerokości kontenera. */
+/**
+ * Dłuższa treść merytoryczna: bloki H2 + akapity.
+ * Dwie kolumny płyną jak w gazecie (CSS columns), więc nie zostają puste dziury przy blokach różnej długości.
+ */
 export function Prose({ sections, columns = 2 }: { sections: { h: string; p: string[] }[]; columns?: 1 | 2 }) {
   return (
-    <div className={`grid gap-x-12 gap-y-9 ${columns === 2 ? "lg:grid-cols-2" : ""}`}>
-      {sections.map((s) => (
-        <div key={s.h}>
-          <h2 className="text-xl font-extrabold leading-snug tracking-tight sm:text-2xl">{s.h}</h2>
+    <div className={columns === 2 ? "lg:columns-2 lg:gap-14" : ""}>
+      {sections.map((s, i) => (
+        <div key={s.h} className={i ? "mt-8" : ""}>
+          {/* Nagłówek nie zostaje sam na dole kolumny (break-after: avoid), akapity mogą przechodzić dalej. */}
+          <h2 className="break-inside-avoid break-after-avoid text-xl font-extrabold leading-snug tracking-tight sm:text-2xl">
+            {s.h}
+          </h2>
           {s.p.map((text) => (
             <p key={text.slice(0, 40)} className="prose-p mt-3">
               {text}

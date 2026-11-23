@@ -202,21 +202,27 @@ export default function Home() {
       </Section>
 
       <Section tone="paper">
-        <Prose sections={homeContent.sections} />
-        <div className="mt-9 border-t border-line pt-6">
-          <p className="text-sm font-bold">Obszar działania — Wieluń i okolice do 50 km:</p>
-          <ul className="mt-3 flex flex-wrap gap-2">
-            {cities.map((c) => (
-              <li key={c.slug}>
-                <Link
-                  href={`/wykonczenia-wnetrz/${c.slug}/`}
-                  className="inline-block rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold hover:border-accent"
-                >
-                  {c.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        {/* Dwie kolumny o zbliżonej wysokości: opis firmy + obszar działania | pozostałe bloki tekstu */}
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
+          <div>
+            <Prose sections={homeContent.sections.slice(0, 1)} columns={1} />
+            <div className="mt-7 rounded-2xl border border-line bg-white p-5">
+              <p className="text-sm font-bold">Obszar działania — Wieluń i okolice do 50 km</p>
+              <ul className="mt-3 flex flex-wrap gap-2">
+                {cities.map((c) => (
+                  <li key={c.slug}>
+                    <Link
+                      href={`/wykonczenia-wnetrz/${c.slug}/`}
+                      className="inline-block rounded-full border border-line bg-paper px-3.5 py-1.5 text-sm font-semibold hover:border-accent"
+                    >
+                      {c.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <Prose sections={homeContent.sections.slice(1)} columns={1} />
         </div>
       </Section>
 
