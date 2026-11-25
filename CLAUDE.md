@@ -69,3 +69,15 @@ rozbudowany tekst z nagłówkami H2, FAQ i schema, nie same kafelki.
 - Popup przedświątecznego sprzątania: `src/components/HolidayPopup.tsx` (do 24.12.2026, po 6 s, raz na 3 dni,
   nie na formularzach); po świętach usunąć z `layout.tsx` albo zmienić datę i treść
 - Hero: `src/components/HeroSlider.tsx` (6 zdjęć realizacji)
+
+## Poprawki klienta 25.11.2026
+
+- Zasady treści: bez słowa „remont” (zamiast tego „kompleksowe wykończenia”), bez montażu drzwi i tapet,
+  pod LED tylko przygotowujemy (instalację robi elektryk). Wyjątki: cytaty z opinii klientów i logo
+  („WYKOŃCZENIA I REMONTY” w pliku logo) — nie ruszane.
+- Hero: film v01 („Strona główna” z dysku) w `HeroVideo.tsx`; przycisk Prasa → `press` w `site.ts`
+- Usługi: 10 pozycji z ikonami z dysku (`public/ikony/`), pole `video` = jeden film na stronie usługi;
+  sufity + adaptacja poddaszy połączone (`/uslugi/sufity-podwieszane/`), malowanie osobno
+- Stare adresy (remonty-lazienek, gladzie-i-malowanie, podlogi-i-drzwi, adaptacja-poddasza, sprzatanie-po-remoncie,
+  blog remont-lazienki-…, sprzatanie-po-remoncie-…) zmienione — strona nie była jeszcze opublikowana, więc bez przekierowań
+- Do uzupełnienia: imiona/opisy 3 osób z zespołu (Chrome był niedostępny, opisy są na FB), logo Sendi Pro
