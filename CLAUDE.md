@@ -22,7 +22,7 @@ Tailwind 4. Stroną zarządza OlekCodeTech, klient nie ma panelu. Research: `C:\
 - Materiały klienta: Dysk Google „Drobud - materiały” (id 14UIWmPhpjK-0lu7X8vuDo1xGkFnR3mj7), kopia
   w `C:\Users\olo_p\Documents\drobud\materialy-dysk` (oryginały filmów w `wideo/`). Filmy kompresowane
   ffmpeg: H.264 crf 27, max 720 px, AAC 96k, faststart
-- Do uzupełnienia od klienta: imiona i opisy 3 osób z ekipy (pracownik-1/2/3), pełny opis osuszaczy
+- Do uzupełnienia od klienta: pełny opis osuszaczy
   (przyszedł tylko nagłówek), zdjęcia do gładzi / tynków dekoracyjnych / sprzątania, miejscowości realizacji
 - `src/components/forms.tsx` — formularz wyceny (upload plików) i kontaktu
 - `src/components/BookingForm.tsx` — kalendarz wstępnej rezerwacji (osuszacze: zakres dat, sprzątanie: dzień)
@@ -80,4 +80,4 @@ rozbudowany tekst z nagłówkami H2, FAQ i schema, nie same kafelki.
   sufity + adaptacja poddaszy połączone (`/uslugi/sufity-podwieszane/`), malowanie osobno
 - Stare adresy (remonty-lazienek, gladzie-i-malowanie, podlogi-i-drzwi, adaptacja-poddasza, sprzatanie-po-remoncie,
   blog remont-lazienki-…, sprzatanie-po-remoncie-…) zmienione — strona nie była jeszcze opublikowana, więc bez przekierowań
-- Do uzupełnienia: imiona/opisy 3 osób z zespołu (Chrome był niedostępny, opisy są na FB), logo Sendi Pro
+- Zespół: opisy 6 osób od klienta (25.11); zdjęcia pracownik-1 = Zbyszek, pracownik-2 = Tomek, pracownik-3 = Damian K. Do uzupełnienia: logo Sendi Pro

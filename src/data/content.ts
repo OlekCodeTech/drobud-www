@@ -124,30 +124,44 @@ export const projects: Project[] = [
 
 export type Person = { name: string; role: string; bio: string; photo?: string };
 
-// Opisy Darka i Kamila z Facebooka DroBud (posty „Poznajcie naszą zgraną ekipę”).
-// TODO: imiona i opisy pozostałych trzech osób oraz potwierdzenie opisu Damiana.
+// Opisy od klienta (25.11.2026). Zdjęcia: pracownik-1 = Zbyszek, pracownik-2 = Tomek, pracownik-3 = Damian K.
 export const team: Person[] = [
   {
-    name: "Damian Drosiński",
+    name: "Damian",
     role: "Właściciel",
-    bio: "Założyciel DroBud, ponad 10 lat doświadczenia w wykończeniach wnętrz. Laureat plebiscytu Mistrzowie Budownictwa 2026 w województwie łódzkim.",
+    bio: "Mózg i serce firmy, którą tworzy z zamiłowania od ponad 4 lat. Szkolenia i poznawanie nowych rozwiązań w branży wykończeniowej to jego pasja. Cechuje go dokładność i pedantyzm. Lubi wyzwania, a największą frajdę sprawia mu kładzenie glazury oraz wszelkie prace z suchą zabudową. Zadowolenie klienta daje mu największą satysfakcję.",
     photo: "/zespol/damian.jpg",
   },
   {
+    name: "Tomek",
+    role: "Gipsowanie i malowanie",
+    bio: "Specjalista od gipsowania i malowania. Praca z farbami strukturalnymi nie jest mu obca. Zawsze uśmiechnięty i pełen pozytywnej energii — dzięki niemu praca nigdy nie jest nudna, a czas leci bardzo szybko. Duże doświadczenie w branży wykończeniowej czyni go wszechstronną osobą.",
+    photo: "/zespol/pracownik-2.jpg",
+  },
+  {
+    name: "Zbyszek",
+    role: "Glazura i łazienki",
+    bio: "Specjalista od kładzenia glazury. Jego konikiem są realizacje łazienek. Dzięki długoletniemu doświadczeniu sprosta nawet największym wymaganiom projektantów oraz inwestorów. Cechuje go dokładność i cierpliwość, które są niesamowicie ważne podczas prac wykończeniowych.",
+    photo: "/zespol/pracownik-1.jpg",
+  },
+  {
+    name: "Damian K.",
+    role: "Technolog robót wykończeniowych",
+    bio: "Technolog robót wykończeniowych z doświadczeniem. Ma szeroką wiedzę w zakresie prac wykończeniowych, a jego wiodącą dziedziną jest hydraulika. Zajmuje się białym montażem oraz przeróbkami hydraulicznymi w łazienkach. Jest prawą ręką naszego eksperta od glazury — Zbyszka. Razem tworzą zgrany duet, który zrealizował już niejeden wymagający projekt łazienki.",
+    photo: "/zespol/pracownik-3.jpg",
+  },
+  {
     name: "Darek",
-    role: "Wykończenia wnętrz",
-    bio: "Dokładny, samodzielny i bardzo zaangażowany w swoją pracę. Ma duże doświadczenie w wykończeniach wnętrz, a jego mocną stroną są sufity podwieszane, adaptacje poddaszy i gładzie. Na bieżąco śledzi nowinki w branży i chętnie uczy się nowych metod.",
+    role: "Sufity, poddasza, gładzie",
+    bio: "Dokładny, samodzielny i bardzo zaangażowany w swoją pracę. Ma duże doświadczenie w wykończeniach wnętrz. Lubi wyzwania, a jego mocną stroną są przede wszystkim sufity podwieszane, adaptacje poddaszy oraz wykonywanie gładzi. Na bieżąco śledzi nowinki i rozwiązania w branży, chętnie uczy się nowych metod i rozwija swoje umiejętności.",
     photo: "/zespol/darek.jpg",
   },
   {
     name: "Kamil",
     role: "Gładzie i prace malarskie",
-    bio: "Absolwent szkoły o kierunku monter zabudów i robót wykończeniowych w budownictwie. Ma szeroką wiedzę i umiejętności w zakresie prac wykończeniowych — możecie spotkać go przy gładziach i pracach malarskich. Sumiennie wykonuje swoje zadania, dbając o jakość i estetykę.",
+    bio: "Absolwent szkoły o kierunku monter zabudów i robót wykończeniowych w budownictwie. Ma szeroką wiedzę i umiejętności w zakresie prac wykończeniowych. Możecie spotkać go podczas wykonywania gładzi oraz prac malarskich. Sumiennie wykonuje swoje zadania z dbałością o jakość i estetykę.",
     photo: "/zespol/kamil.jpg",
   },
-  { name: "Imię do uzupełnienia", role: "Ekipa DroBud", bio: "Opis do uzupełnienia.", photo: "/zespol/pracownik-1.jpg" },
-  { name: "Imię do uzupełnienia", role: "Ekipa DroBud", bio: "Opis do uzupełnienia.", photo: "/zespol/pracownik-2.jpg" },
-  { name: "Imię do uzupełnienia", role: "Ekipa DroBud", bio: "Opis do uzupełnienia.", photo: "/zespol/pracownik-3.jpg" },
 ];
 
 export type Award = { title: string; detail: string; image: string; imageAlt: string };
