@@ -3,7 +3,7 @@ import Link from "next/link";
 import { press, process_, site } from "@/data/site";
 import { BrandLogos } from "@/components/BrandLogos";
 import { services } from "@/data/services";
-import { awards, cities, projects, reviews, videos } from "@/data/content";
+import { awards, cities, galaVideo, projects, reviews, videos } from "@/data/content";
 import { homeContent } from "@/data/home-content";
 import { Cta, Faq, ProjectCard, Prose, ReviewCard, Section, ServiceCard } from "@/components/ui";
 import { VideoGrid } from "@/components/media";
@@ -85,26 +85,11 @@ export default function Home() {
         lead="Od pojedynczej łazienki po wykończenie całego domu — jedna ekipa na wszystkie etapy."
         action={{ href: "/uslugi/", label: "Wszystkie usługi" }}
       >
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.slice(0, 6).map((s, i) => (
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          {services.map((s, i) => (
             <ServiceCard key={s.slug} service={s} index={i} />
           ))}
         </div>
-        <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {services.slice(6).map((s) => (
-            <li key={s.slug}>
-              <Link
-                href={`/uslugi/${s.slug}/`}
-                className="flex h-full items-center justify-between gap-3 rounded-2xl border border-line bg-white px-5 py-4 text-sm font-bold hover:border-accent"
-              >
-                {s.title}
-                <span aria-hidden="true" className="text-accent-dark">
-                  →
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
       </Section>
 
       <Section
@@ -148,7 +133,8 @@ export default function Home() {
       </Section>
 
       <Section eyebrow="Wyróżnienia" title="Doceniani przez inwestorów i branżę">
-        <ul className="grid gap-5 md:grid-cols-3">
+        <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,1fr)_15rem]">
+        <ul className="grid gap-4">
           {awards.map((a) => (
             <li key={a.title} className="flex items-center gap-4 rounded-2xl border border-line bg-white p-4">
               <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl">
@@ -161,6 +147,8 @@ export default function Home() {
             </li>
           ))}
         </ul>
+          <VideoGrid items={[galaVideo]} gridClass="mx-auto w-full max-w-[15rem]" />
+        </div>
         <p className="mb-4 mt-8 text-sm font-bold">Pracujemy na sprzęcie i materiałach sprawdzonych marek:</p>
         <BrandLogos compact />
       </Section>
@@ -192,11 +180,7 @@ export default function Home() {
                 href={`/rezerwacja/?usluga=${s.booking}`}
                 className="group flex items-center gap-5 rounded-2xl border border-line bg-white p-5 hover:border-accent"
               >
-                {s.images?.[0] && (
-                  <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl bg-paper">
-                    <Image src={s.images[0]} alt="" fill sizes="80px" className="object-cover" />
-                  </div>
-                )}
+                <Image src={s.icon} alt="" width={80} height={80} className="h-20 w-20 shrink-0" />
                 <div>
                   <h3 className="text-lg font-extrabold leading-snug">{s.title}</h3>
                   <p className="mt-1 text-sm text-muted">{s.short}</p>

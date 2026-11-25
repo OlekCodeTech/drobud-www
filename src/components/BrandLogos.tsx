@@ -5,7 +5,7 @@ import { brands } from "@/data/site";
 // Źródła: DeWalt i Makita — Wikimedia Commons; pozostałe — strony producentów.
 export function BrandLogos({ compact = false }: { compact?: boolean }) {
   return (
-    <ul className="grid grid-cols-3 gap-3 sm:grid-cols-5 lg:grid-cols-9">
+    <ul className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-6">
       {brands.map((b) => (
         <li
           key={b.name}

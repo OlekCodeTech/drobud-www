@@ -58,6 +58,7 @@ export const jobs: Job[] = [
     ],
     requirements: [
       "Doświadczenie w montażu płyt G-K i sufitów podwieszanych",
+      "Prawo jazdy kategorii B",
       "Umiejętność pracy w zespole",
       "Pracowitość",
       "Chęć nabywania nowych umiejętności",

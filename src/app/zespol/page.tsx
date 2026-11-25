@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { awards, team, videos } from "@/data/content";
+import { awards, galaVideo, team, videos } from "@/data/content";
 import { site } from "@/data/site";
 import { BrandLogos } from "@/components/BrandLogos";
 import { Cta, PageHero, Section } from "@/components/ui";
@@ -62,7 +62,10 @@ export default function Page() {
       </Section>
 
       <Section eyebrow="Wyróżnienia" title="Doceniani przez inwestorów i branżę">
-        <Awards items={awards} />
+        <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_15rem]">
+          <Awards items={awards} />
+          <VideoGrid items={[galaVideo]} gridClass="mx-auto w-full max-w-[15rem]" />
+        </div>
       </Section>
 
       <Section tone="paper" eyebrow="Sprzęt i materiały" title="Pracujemy na sprawdzonych markach">

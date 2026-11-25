@@ -61,7 +61,7 @@ export const nav = [
 ] as const;
 
 // Marki narzędzi i materiałów, na których pracuje ekipa (wg klienta 19.11 i 25.11.2026).
-// file — logotyp w public/marki/; bez pliku pokazujemy nazwę (Sendi Pro: brak oficjalnej strony z logo).
+// file — logotyp w public/marki/; bez pliku pokazujemy nazwę (Sendi: brak oficjalnej strony z logo).
 export const brands: { name: string; file?: string }[] = [
   { name: "DeWalt", file: "dewalt.svg" },
   { name: "Makita", file: "makita.svg" },
@@ -69,7 +69,9 @@ export const brands: { name: string; file?: string }[] = [
   { name: "Mirka", file: "mirka.svg" },
   { name: "Starmix", file: "starmix.svg" },
   { name: "Kubala", file: "kubala.svg" },
-  { name: "Sendi Pro" },
+  { name: "Sendi" },
+  { name: "PRO", file: "pro.svg" },
+  { name: "Nivel System", file: "nivel.png" },
   { name: "Mapei", file: "mapei.png" },
   { name: "Atlas", file: "atlas.svg" },
 ];

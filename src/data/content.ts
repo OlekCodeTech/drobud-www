@@ -195,6 +195,9 @@ export type Video = {
 };
 
 // Filmy z dysku klienta, skompresowane do public/wideo/<id>.mp4 + okładka <id>.jpg.
+// Film z gali — tylko w sekcjach Zespół i Wyróżnienia (wg klienta nie w Realizacjach).
+export const galaVideo: Video = { id: "v12", title: "Gala Mistrzowie Budownictwa 2026", services: [] };
+
 export const videos: Video[] = [
   // Pierwsze trzy z nazw nadanych przez klienta na dysku (24.11.2026); v01 („Strona główna”) jest w hero.
   { id: "v02", title: "Wykończenie domów i mieszkań", services: ["wykonczenia-pod-klucz"] },
@@ -211,7 +214,6 @@ export const videos: Video[] = [
   { id: "v11", title: "Łazienka — efekt końcowy", services: ["wykonczenia-lazienek"] },
   { id: "v04", title: "Przygotowanie ścian pod malowanie", services: ["malowanie"] },
   { id: "v06", title: "Ekipa przy pracy", services: [] },
-  { id: "v12", title: "Gala Mistrzowie Budownictwa 2026", services: [] },
 ];
 
 export type Review = { author: string; source: "Google" | "Facebook"; date: string; text: string };

@@ -20,7 +20,7 @@ export const homeContent: LongContent = {
     {
       h: "Dlaczego inwestorzy wybierają DroBud",
       p: [
-        "Pracujemy na profesjonalnym sprzęcie i materiałach sprawdzonych marek: DeWalt, Makita, Bosch, Mirka, Starmix, Kubala, Sendi Pro, Mapei i Atlas. Szlifowanie z odsysaniem pyłu, precyzyjne cięcie płytek i systemy poziomowania przekładają się na równiejsze powierzchnie i czystszą budowę. Klienci w opiniach najczęściej podkreślają sprawny przebieg prac, porządek na budowie i dobry kontakt.",
+        "Pracujemy na profesjonalnym sprzęcie i materiałach sprawdzonych marek: DeWalt, Makita, Bosch, Mirka, Starmix, Kubala, Sendi, PRO, Nivel System, Mapei i Atlas. Szlifowanie z odsysaniem pyłu, precyzyjne cięcie płytek i systemy poziomowania przekładają się na równiejsze powierzchnie i czystszą budowę. Klienci w opiniach najczęściej podkreślają sprawny przebieg prac, porządek na budowie i dobry kontakt.",
         "Wycenę przygotowujemy indywidualnie. Wystarczy przesłać projekt, zdjęcia i opis prac przez formularz oraz zostawić numer telefonu — oddzwonimy, żeby omówić szczegóły.",
       ],
     },
