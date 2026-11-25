@@ -23,9 +23,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { miasto } = await params;
   const city = getCity(miasto);
   if (!city) return {};
+  const content = cityContent[city.slug];
   return {
-    title: `Wykończenia wnętrz ${city.name} — kompleksowe wykończenia pod klucz`,
-    description: `Kompleksowe wykończenia wnętrz ${city.locative}: łazienki, sufity podwieszane, gładzie, gres, panele. Ekipa DroBud z Wielunia. Wyślij projekt do wyceny.`,
+    title: content?.title ?? `Wykończenia wnętrz ${city.name} — kompleksowe wykończenia pod klucz`,
+    description:
+      content?.description ??
+      `Kompleksowe wykończenia wnętrz ${city.locative}: łazienki, sufity podwieszane, gładzie, gres, panele. Ekipa DroBud z Wielunia.`,
     alternates: { canonical: `/wykonczenia-wnetrz/${city.slug}/` },
   };
 }
@@ -58,11 +61,10 @@ export default async function Page({ params }: Props) {
     <>
       <PageHero
         eyebrow={`Obszar działania · ${city.name}`}
-        title={`Kompleksowe wykończenia wnętrz ${city.locative}`}
+        title={isBase ? "Wykończenie mieszkania i domu w Wieluniu" : `Wykończenia wnętrz ${city.locative}`}
         lead={
-          isBase
-            ? "Jesteśmy z Wielunia. Wykańczamy domy, mieszkania i lokale pod klucz — od łazienki po cały dom."
-            : `Dojeżdżamy z Wielunia do klientów ${city.locative} i okolicach. Wykańczamy domy, mieszkania i lokale pod klucz.`
+          content?.lead ??
+          `Dojeżdżamy z Wielunia do klientów ${city.locative} i okolicach. Wykańczamy domy, mieszkania i lokale pod klucz.`
         }
       >
         <Link href="/wycena/" className="btn-primary">
@@ -84,6 +86,18 @@ export default async function Page({ params }: Props) {
       {content && (
         <Section tone="paper">
           <Prose sections={content.sections} />
+          <div className="mt-9 border-t border-line pt-6">
+            <h2 className="text-xl font-extrabold tracking-tight sm:text-2xl">Usługi {city.locative} — szczegóły</h2>
+            <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+              {content.links.map((l) => (
+                <li key={l.slug}>
+                  <Link href={`/uslugi/${l.slug}/`} className="link-arrow">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
           <div className="mt-9 border-t border-line pt-6">
             <h2 className="text-xl font-extrabold tracking-tight sm:text-2xl">
               Miejscowości w okolicy, do których dojeżdżamy
@@ -133,6 +147,17 @@ export default async function Page({ params }: Props) {
 
       <Cta title={`Planujesz wykończenie ${city.locative}?`} />
       <JsonLd data={faqSchema(faq)} />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: content?.title ?? `Wykończenia wnętrz ${city.name}`,
+          serviceType: "Wykończenia wnętrz",
+          url: `${site.url}/wykonczenia-wnetrz/${city.slug}/`,
+          provider: { "@id": `${site.url}/#firma` },
+          areaServed: [city.name, ...(content?.nearby ?? [])].map((name) => ({ "@type": "Place", name })),
+        }}
+      />
     </>
   );
 }

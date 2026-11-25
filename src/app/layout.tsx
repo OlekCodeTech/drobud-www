@@ -16,7 +16,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "DroBud — wykończenia wnętrz pod klucz | Wieluń i okolice",
+    default: "Firma wykończeniowa Wieluń i okolice — DroBud",
     template: "%s | DroBud Wieluń",
   },
   description:
