@@ -92,3 +92,11 @@ rozbudowany tekst z nagłówkami H2, FAQ i schema, nie same kafelki.
   strony — `public/.htaccess` przekierowuje je 301 na drobudwielun.pl (także www i http → https)
 - `send.php`: MAIL_FROM biuro@drobudwielun.pl, ALLOWED_HOST drobudwielun.pl; MAIL_TO i `site.email`
   = biuro@drobudwielun.pl (od 25.11.2026)
+
+## Wdrożenie (LIVE od 25.11.2026)
+
+- https://drobudwielun.pl — Hostinger (konto z planem Cloud Professional), strona PHP/HTML „drobudwielun.pl”,
+  pliki w `domains/drobudwielun.pl/public_html`. Aliasy (Zaparkowane domeny): remontywielun.pl, wykonczeniawielun.pl
+- Aktualizacja: `python tools/build_prod.py`, potem wgrać zawartość `out/` do `public_html` (menedżer plików hPanelu:
+  upload ZIP-a → „Wyodrębnij do → Tutaj, z zastąpieniem”, potem usunąć ZIP). Przez przeglądarkę Claude'a limit
+  10 MB na plik — dzielić na paczki (`dist/czesci/`)
