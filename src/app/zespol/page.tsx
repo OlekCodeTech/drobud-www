@@ -33,7 +33,7 @@ export default function Page() {
                 {person.photo && (
                   <Image
                     src={person.photo}
-                    alt={`${person.name} — ${person.role}, DroBud`}
+                    alt={`${person.name} — ekipa DroBud`}
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     className="object-cover object-top"
@@ -41,7 +41,6 @@ export default function Page() {
                 )}
               </div>
               <h2 className="mt-4 text-xl font-extrabold">{person.name}</h2>
-              <p className="text-sm font-bold text-accent-dark">{person.role}</p>
               <p className="mt-2 leading-relaxed text-muted">{person.bio}</p>
             </li>
           ))}
