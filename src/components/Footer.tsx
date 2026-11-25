@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { CookieSettingsLink } from "@/components/CookieBanner";
 import { site } from "@/data/site";
 import { SocialLinks } from "@/components/social";
 import { services } from "@/data/services";
@@ -91,6 +92,7 @@ export function Footer() {
             <Link href="/polityka-prywatnosci/" className="hover:text-ink">
               Polityka prywatności
             </Link>
+            <CookieSettingsLink className="hover:text-ink" />
           </div>
         </div>
       </div>

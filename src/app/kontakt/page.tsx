@@ -4,6 +4,7 @@ import { site } from "@/data/site";
 import { cities } from "@/data/content";
 import { PageHero } from "@/components/ui";
 import { ContactForm } from "@/components/forms";
+import { ConsentGate } from "@/components/ConsentGate";
 
 export const metadata: Metadata = {
   title: "Kontakt",
@@ -61,13 +62,19 @@ export default function Page() {
               <h2 className="text-lg font-extrabold">Obszar działania</h2>
               <p className="mt-3 text-muted">{cities.map((c) => c.name).join(", ")} i okolice.</p>
             </div>
-            <iframe
-              title="Mapa dojazdu — DroBud Wieluń"
-              src={mapSrc}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="h-72 w-full rounded-2xl border-0"
-            />
+            <ConsentGate
+              label="Mapa dojazdu"
+              fallbackHref={`https://www.google.com/maps?q=${site.geo.lat},${site.geo.lng}`}
+              className="h-72"
+            >
+              <iframe
+                title="Mapa dojazdu — DroBud Wieluń"
+                src={mapSrc}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-72 w-full rounded-2xl border-0"
+              />
+            </ConsentGate>
           </div>
 
           <div className="rounded-3xl bg-white p-6 shadow-sm sm:p-10">

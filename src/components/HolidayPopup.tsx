@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { site } from "@/data/site";
+import { readConsent } from "@/lib/consent";
 
 // Popup z przedświątecznym sprzątaniem. Pokazuje się tylko do SHOW_UNTIL, po DELAY ms,
 // najwyżej raz na REPEAT_DAYS dni (localStorage) i nie na stronach, gdzie by przeszkadzał.
@@ -28,6 +29,8 @@ export function HolidayPopup() {
   useEffect(() => {
     if (new Date() > new Date(`${SHOW_UNTIL}T23:59:59`)) return;
     if (SKIP_PATHS.some((p) => pathname.startsWith(p))) return;
+    // Najpierw decyzja w banerze cookies — nie nakładamy dwóch okien naraz.
+    if (!readConsent()) return;
     try {
       const last = Number(localStorage.getItem(KEY) || 0);
       if (Date.now() - last < REPEAT_DAYS * 864e5) return;

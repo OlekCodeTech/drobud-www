@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { JsonLd, localBusinessSchema } from "@/components/JsonLd";
 import { site } from "@/data/site";
 import { HolidayPopup } from "@/components/HolidayPopup";
+import { CookieBanner } from "@/components/CookieBanner";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -46,6 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
         <Footer />
         <HolidayPopup />
+        <CookieBanner />
         <JsonLd data={localBusinessSchema()} />
       </body>
     </html>
