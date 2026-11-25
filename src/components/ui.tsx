@@ -165,11 +165,8 @@ export function ServiceCard({ service, index }: { service: Service; index: numbe
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article>
-      <Photo src={project.images[0]} alt={`${project.title} — ${project.city}`} className="aspect-[4/3]" />
-      <p className="mt-3 text-xs font-bold uppercase tracking-wider text-accent-dark">{project.city}</p>
-      <h3 className="mt-1 text-base font-extrabold leading-snug">{project.title}</h3>
-    </article>
+    // Wg klienta: same zdjęcia, bez podpisów (opis zostaje tylko w alt).
+    <Photo src={project.images[0]} alt={`${project.title} — realizacja DroBud`} className="aspect-[4/3]" />
   );
 }
 

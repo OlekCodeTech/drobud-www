@@ -28,7 +28,6 @@ export function VideoGrid({
             >
               <source src={asset(`/wideo/${v.id}.mp4`)} type="video/mp4" />
             </video>
-            <figcaption className="mt-2 text-sm font-semibold leading-snug">{v.title}</figcaption>
           </figure>
         </li>
       ))}
