@@ -109,4 +109,4 @@ rozbudowany tekst z nagłówkami H2, FAQ i schema, nie same kafelki.
 - Polityka prywatności przepisana w całości — okresy przechowywania (12 mies.) i adres siedziby do potwierdzenia
 - E-mail: skrzynka biuro@drobudwielun.pl (Titan Free na Hostingerze). SPF ma tylko Titan — dopisać
   `include:_spf.mail.hostinger.com`, bo formularz wysyła przez serwer WWW
-- Google Search Console: do dodania (API Composio nie ma uprawnień do weryfikacji — przez UI, meta tag w layout)
+- Google Search Console: https://drobudwielun.pl/ zweryfikowana 25.11.2026 plikiem `public/google96e0791bcf3ff8f5.html` (NIE USUWAĆ), sitemap zgłoszona, prośba o indeksację strony głównej
