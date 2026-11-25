@@ -80,4 +80,7 @@ rozbudowany tekst z nagłówkami H2, FAQ i schema, nie same kafelki.
   sufity + adaptacja poddaszy połączone (`/uslugi/sufity-podwieszane/`), malowanie osobno
 - Stare adresy (remonty-lazienek, gladzie-i-malowanie, podlogi-i-drzwi, adaptacja-poddasza, sprzatanie-po-remoncie,
   blog remont-lazienki-…, sprzatanie-po-remoncie-…) zmienione — strona nie była jeszcze opublikowana, więc bez przekierowań
-- Zespół: opisy 6 osób od klienta (25.11); zdjęcia pracownik-1 = Zbyszek, pracownik-2 = Tomek, pracownik-3 = Damian K. Do uzupełnienia: logo Sendi Pro
+- Zespół: opisy 6 osób od klienta (25.11); zdjęcia pracownik-1 = Zbyszek, pracownik-2 = Tomek, pracownik-3 = Damian K.
+- Marki: Sendi i PRO to osobne firmy; Sendi bez logo (sendi.pl przekierowuje na spam) — wyświetlana nazwą; Nivel z białego logo przebarwiony na ciemno
+- Film z gali (v12) = `galaVideo` w `content.ts`: tylko w sekcjach wyróżnień (główna, zespół), nie w realizacjach
+- Do zmiany: e-mail firmy (`site.email` + `MAIL_TO` w send.php) — klient prosi o „nowy”, adres do ustalenia
