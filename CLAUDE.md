@@ -10,7 +10,8 @@ Tailwind 4. Stroną zarządza OlekCodeTech, klient nie ma panelu. Research: `C:\
 - `npm run dev` — podgląd lokalny
 - `npm run build` — eksport do `out/` (bez indeksacji). Build przy włączonym `dev` psuje jego cache
   (stare style) — po buildzie zatrzymać dev, usunąć `.next/dev` i uruchomić ponownie
-- Build produkcyjny: `NEXT_PUBLIC_SITE_URL=https://domena.pl NEXT_PUBLIC_INDEX=1 npm run build`
+- Build produkcyjny: `python tools/build_prod.py` → `dist/drobudwielun-RRRRMMDD.zip` (z indeksacją, do wgrania
+  do `public_html` na Hostingerze)
 
 ## Struktura
 
@@ -84,3 +85,10 @@ rozbudowany tekst z nagłówkami H2, FAQ i schema, nie same kafelki.
 - Marki: Sendi i PRO to osobne firmy; Sendi bez logo (sendi.pl przekierowuje na spam) — wyświetlana nazwą; Nivel z białego logo przebarwiony na ciemno
 - Film z gali (v12) = `galaVideo` w `content.ts`: tylko w sekcjach wyróżnień (główna, zespół), nie w realizacjach
 - Do zmiany: e-mail firmy (`site.email` + `MAIL_TO` w send.php) — klient prosi o „nowy”, adres do ustalenia
+
+## Domeny (25.11.2026)
+
+- Główna: drobudwielun.pl (Hostinger). remontywielun.pl i wykonczeniawielun.pl dodać w hPanelu jako aliasy
+  strony — `public/.htaccess` przekierowuje je 301 na drobudwielun.pl (także www i http → https)
+- `send.php`: MAIL_FROM formularz@drobudwielun.pl, ALLOWED_HOST drobudwielun.pl; MAIL_TO i `site.email`
+  czekają na nowy adres od klienta

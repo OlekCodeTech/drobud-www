@@ -5,8 +5,8 @@ export const site = {
   legalName: "„DroBud” Usługi Wykończeniowe Damian Drosiński",
   owner: "Damian Drosiński",
   slogan: "Wykończymy Twój dom, a nie Ciebie!",
-  // TODO: domena docelowa (drobud.pl zajęta) — ustawiana przez NEXT_PUBLIC_SITE_URL
-  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://drobud-wielun.pl").replace(/\/$/, ""),
+  // Domena główna drobudwielun.pl (Hostinger); remontywielun.pl i wykonczeniawielun.pl → 301 (public/.htaccess)
+  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://drobudwielun.pl").replace(/\/$/, ""),
   // Strona jest indeksowana dopiero po ustawieniu NEXT_PUBLIC_INDEX=1 przy buildzie produkcyjnym.
   indexable: process.env.NEXT_PUBLIC_INDEX === "1",
   phone: "782 120 663",

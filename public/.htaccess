@@ -1,0 +1,39 @@
+# DroBud — Hostinger (LiteSpeed). Domena główna: drobudwielun.pl
+# remontywielun.pl i wykonczeniawielun.pl dodać w hPanelu jako aliasy (parked) tej strony —
+# poniższe reguły przekierują je 301 na drobudwielun.pl z zachowaniem ścieżki.
+
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+RewriteEngine On
+
+# Domeny dodatkowe i www → https://drobudwielun.pl
+RewriteCond %{HTTP_HOST} ^(www\.)?(remontywielun|wykonczeniawielun)\.pl$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www\.drobudwielun\.pl$ [NC]
+RewriteRule ^ https://drobudwielun.pl%{REQUEST_URI} [R=301,L]
+
+# HTTP → HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://drobudwielun.pl%{REQUEST_URI} [R=301,L]
+
+# Cache plików statycznych
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType video/mp4 "access plus 1 month"
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "^_next/static/">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
