@@ -100,3 +100,13 @@ rozbudowany tekst z nagłówkami H2, FAQ i schema, nie same kafelki.
 - Aktualizacja: `python tools/build_prod.py`, potem wgrać zawartość `out/` do `public_html` (menedżer plików hPanelu:
   upload ZIP-a → „Wyodrębnij do → Tutaj, z zastąpieniem”, potem usunąć ZIP). Przez przeglądarkę Claude'a limit
   10 MB na plik — dzielić na paczki (`dist/czesci/`)
+
+## Cookies i prywatność (25.11.2026)
+
+- Baner zgody: `src/components/CookieBanner.tsx` + `src/lib/consent.ts` (localStorage `drobud-consent`, kategorie:
+  niezbędne / treści zewnętrzne / statystyki). Mapa Google na /kontakt/ za `ConsentGate`. GA4 włącza się
+  tylko po ustawieniu `NEXT_PUBLIC_GA_ID` i zgodzie na statystyki. Link „Ustawienia cookies” w stopce
+- Polityka prywatności przepisana w całości — okresy przechowywania (12 mies.) i adres siedziby do potwierdzenia
+- E-mail: skrzynka biuro@drobudwielun.pl (Titan Free na Hostingerze). SPF ma tylko Titan — dopisać
+  `include:_spf.mail.hostinger.com`, bo formularz wysyła przez serwer WWW
+- Google Search Console: do dodania (API Composio nie ma uprawnień do weryfikacji — przez UI, meta tag w layout)
