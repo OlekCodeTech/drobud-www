@@ -129,7 +129,7 @@ export const team: Person[] = [
   {
     name: "Damian",
     role: "Właściciel",
-    bio: "Mózg i serce firmy, którą tworzy z zamiłowania od ponad 4 lat. Szkolenia i poznawanie nowych rozwiązań w branży wykończeniowej to jego pasja. Cechuje go dokładność i pedantyzm. Lubi wyzwania, a największą frajdę sprawia mu kładzenie glazury oraz wszelkie prace z suchą zabudową. Zadowolenie klienta daje mu największą satysfakcję.",
+    bio: "Mózg i serce firmy, którą tworzy z zamiłowania. W branży wykończeniowej ma ponad 10 lat doświadczenia. Szkolenia i poznawanie nowych rozwiązań w branży wykończeniowej to jego pasja. Cechuje go dokładność i pedantyzm. Lubi wyzwania, a największą frajdę sprawia mu kładzenie glazury oraz wszelkie prace z suchą zabudową. Zadowolenie klienta daje mu największą satysfakcję.",
     photo: "/zespol/damian.jpg",
   },
   {
