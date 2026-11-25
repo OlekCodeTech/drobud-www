@@ -12,7 +12,7 @@ export function Footer() {
         <div>
           <Image
             src="/logo-drobud.jpg"
-            alt="DroBud — wykończenia i remonty"
+            alt="DroBud — logo"
             width={554}
             height={608}
             className="h-auto w-36"

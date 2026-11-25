@@ -36,12 +36,18 @@ export const site = {
       "https://www.google.com/maps/place/DroBud+Us%C5%82ugi+wyko%C5%84czeniowe+Damian+Drosi%C5%84ski/",
   },
   stats: [
-    { value: "od 2020", label: "na rynku" },
+    { value: "10+ lat", label: "doświadczenia" },
     { value: "100%", label: "poleceń na Facebooku (36 opinii)" },
-    { value: "2× 2026", label: "Mistrzowie Budownictwa, woj. łódzkie" },
+    { value: "Laureat", label: "Mistrzowie Budownictwa 2026" },
     { value: "50 km", label: "zasięg od Wielunia" },
   ],
 } as const;
+
+// Artykuł prasowy o firmie (przycisk „Prasa” w hero).
+export const press: { url: string; label: string } = {
+  url: "https://kulisy.net/artykul/dobra-firma-od-wykonczen-n2396661",
+  label: "Kulisy Powiatu: „Dobra firma od wykończeń”",
+};
 
 export const nav = [
   { href: "/uslugi/", label: "Usługi" },
@@ -54,8 +60,19 @@ export const nav = [
   { href: "/kontakt/", label: "Kontakt" },
 ] as const;
 
-// Marki sprzętu z briefu. Logotypy dodać do public/marki/ po dostarczeniu plików.
-export const brands = ["DeWalt", "Mirka", "Starmix", "Makita"] as const;
+// Marki narzędzi i materiałów, na których pracuje ekipa (wg klienta 19.11 i 25.11.2026).
+// file — logotyp w public/marki/; bez pliku pokazujemy nazwę (Sendi Pro: brak oficjalnej strony z logo).
+export const brands: { name: string; file?: string }[] = [
+  { name: "DeWalt", file: "dewalt.svg" },
+  { name: "Makita", file: "makita.svg" },
+  { name: "Bosch", file: "bosch.svg" },
+  { name: "Mirka", file: "mirka.svg" },
+  { name: "Starmix", file: "starmix.svg" },
+  { name: "Kubala", file: "kubala.svg" },
+  { name: "Sendi Pro" },
+  { name: "Mapei", file: "mapei.png" },
+  { name: "Atlas", file: "atlas.svg" },
+];
 
 export const process_ = [
   {

@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const city = getCity(miasto);
   if (!city) return {};
   return {
-    title: `Wykończenia wnętrz ${city.name} — remonty pod klucz`,
-    description: `Wykończenia wnętrz i remonty ${city.locative}: łazienki, gładzie, płytki, zabudowy G-K, podłogi. Ekipa DroBud z Wielunia. Wyślij projekt do wyceny.`,
+    title: `Wykończenia wnętrz ${city.name} — kompleksowe wykończenia pod klucz`,
+    description: `Kompleksowe wykończenia wnętrz ${city.locative}: łazienki, sufity podwieszane, gładzie, gres, panele. Ekipa DroBud z Wielunia. Wyślij projekt do wyceny.`,
     alternates: { canonical: `/wykonczenia-wnetrz/${city.slug}/` },
   };
 }
@@ -41,7 +41,7 @@ export default async function Page({ params }: Props) {
   const faq = [
     ...(content?.faq ?? []),
     {
-      q: `Jak uzyskać wycenę remontu ${city.locative}?`,
+      q: `Jak uzyskać wycenę wykończenia ${city.locative}?`,
       a: "Wyślij projekt lub zdjęcia i krótki opis prac przez formularz wyceny albo zadzwoń. Oddzwaniamy, dopytujemy o szczegóły i w razie potrzeby umawiamy oględziny.",
     },
     {
@@ -49,7 +49,7 @@ export default async function Page({ params }: Props) {
       a: "Kompleksowe wykończenia domów i mieszkań w stanie deweloperskim, łazienki, sufity podwieszane, adaptacje poddaszy, gładzie polimerowe, malowanie, tynki dekoracyjne i farby strukturalne, gres i panele. Wynajmujemy też osuszacze i sprzątamy domy, mieszkania i lokale.",
     },
     {
-      q: `Czy ${city.locative} można wynająć osuszacz lub zamówić sprzątanie po remoncie?`,
+      q: `Czy ${city.locative} można wynająć osuszacz lub zamówić sprzątanie po wykończeniu?`,
       a: "Tak. Termin można wstępnie zarezerwować w kalendarzu na stronie — potwierdzamy go telefonicznie.",
     },
   ];
@@ -58,7 +58,7 @@ export default async function Page({ params }: Props) {
     <>
       <PageHero
         eyebrow={`Obszar działania · ${city.name}`}
-        title={`Wykończenia wnętrz i remonty ${city.locative}`}
+        title={`Kompleksowe wykończenia wnętrz ${city.locative}`}
         lead={
           isBase
             ? "Jesteśmy z Wielunia. Wykańczamy domy, mieszkania i lokale pod klucz — od łazienki po cały dom."
@@ -109,7 +109,7 @@ export default async function Page({ params }: Props) {
         split
         tone={local.length > 0 ? "paper" : "white"}
         eyebrow="Pytania"
-        title={`Remonty i wykończenia ${city.locative} — pytania`}
+        title={`Wykończenia ${city.locative} — pytania`}
       >
         <Faq items={faq} />
       </Section>
@@ -131,7 +131,7 @@ export default async function Page({ params }: Props) {
         </ul>
       </Section>
 
-      <Cta title={`Planujesz remont ${city.locative}?`} />
+      <Cta title={`Planujesz wykończenie ${city.locative}?`} />
       <JsonLd data={faqSchema(faq)} />
     </>
   );

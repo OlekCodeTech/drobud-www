@@ -1,20 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
-import { process_, site } from "@/data/site";
+import { press, process_, site } from "@/data/site";
 import { BrandLogos } from "@/components/BrandLogos";
 import { services } from "@/data/services";
 import { awards, cities, projects, reviews, videos } from "@/data/content";
 import { homeContent } from "@/data/home-content";
 import { Cta, Faq, ProjectCard, Prose, ReviewCard, Section, ServiceCard } from "@/components/ui";
 import { VideoGrid } from "@/components/media";
-import { HeroSlider } from "@/components/HeroSlider";
+import { HeroVideo } from "@/components/HeroVideo";
 import { SocialCards, SocialLinks } from "@/components/social";
 import { JsonLd, faqSchema } from "@/components/JsonLd";
 
 export default function Home() {
   return (
     <>
-      {/* HERO — tekst po lewej, pokaz zdjęć realizacji po prawej */}
+      {/* HERO — tekst po lewej, film „Strona główna” z dysku klienta po prawej */}
       <section className="relative overflow-hidden border-b border-line bg-[linear-gradient(180deg,#faf7f2_0%,#f3ece0_100%)]">
         <div
           aria-hidden="true"
@@ -23,7 +23,7 @@ export default function Home() {
         <div className="container-x relative grid items-center gap-10 py-10 sm:py-12 lg:grid-cols-[1.05fr_1fr] lg:gap-14 lg:py-14">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-accent/50 bg-white px-3.5 py-1.5 text-xs font-bold text-accent-dark">
-              <span aria-hidden="true">★</span> Firma Remontowo-Budowlana Roku 2026 · woj. łódzkie
+              <span aria-hidden="true">★</span> Laureat plebiscytu Mistrzowie Budownictwa 2026
             </p>
             <h1 className="mt-5 text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-[3.6rem]">
               Wykończymy Twój dom, <span className="text-accent-dark">a nie Ciebie!</span>
@@ -44,13 +44,27 @@ export default function Home() {
               <SocialLinks />
               <span className="text-sm text-muted">Filmy i zdjęcia z realizacji w social mediach</span>
             </div>
+            {press && (
+              <a
+                href={press.url}
+                target="_blank"
+                rel="noopener"
+                className="mt-4 inline-flex items-center gap-2.5 rounded-full border border-line bg-white py-2 pl-2 pr-4 text-sm font-bold hover:border-accent"
+              >
+                <span className="rounded-full bg-ink px-2.5 py-1 text-[0.7rem] font-extrabold uppercase tracking-wider text-white">
+                  Prasa
+                </span>
+                {press.label}
+                <span aria-hidden="true">↗</span>
+              </a>
+            )}
 
             <dl className="mt-10 grid grid-cols-2 gap-x-8 gap-y-5 border-t border-line pt-6 sm:grid-cols-4">
               {[
                 { v: "5,0 ★", l: "ocena w Google" },
                 { v: "100%", l: "poleceń na Facebooku" },
-                { v: "od 2020", l: "na rynku" },
-                { v: "2× 2026", l: "Mistrzowie Budownictwa" },
+                { v: "10+ lat", l: "doświadczenia" },
+                { v: "Laureat", l: "Mistrzowie Budownictwa" },
               ].map((s) => (
                 <div key={s.l}>
                   <dt className="sr-only">{s.l}</dt>
@@ -61,16 +75,7 @@ export default function Home() {
             </dl>
           </div>
 
-          <HeroSlider
-            slides={[
-              { src: "/realizacje/lazienka-poddasze-wanna.jpg", title: "Łazienka na poddaszu z wanną wolnostojącą" },
-              { src: "/realizacje/salon-kominek-oswietlenie-liniowe.jpg", title: "Salon z kominkiem i oświetleniem liniowym" },
-              { src: "/realizacje/lazienka-marmur-mozaika.jpg", title: "Łazienka z marmurem i mozaiką" },
-              { src: "/realizacje/salon-jodelka-przeszklenia.jpg", title: "Podłoga w jodełkę przy dużych przeszkleniach" },
-              { src: "/realizacje/lazienka-wanna-wolnostojaca.jpg", title: "Łazienka z wanną i ścianą o wzorze kamienia" },
-              { src: "/realizacje/podloga-jodelka-dom.jpg", title: "Jodełka w domu jednorodzinnym" },
-            ]}
-          />
+          <HeroVideo id="v01" label="DroBud — kompleksowe wykończenia domów, film z realizacji" />
         </div>
       </section>
 
@@ -156,7 +161,7 @@ export default function Home() {
             </li>
           ))}
         </ul>
-        <p className="mb-4 mt-8 text-sm font-bold">Pracujemy na profesjonalnym sprzęcie:</p>
+        <p className="mb-4 mt-8 text-sm font-bold">Pracujemy na sprzęcie i materiałach sprawdzonych marek:</p>
         <BrandLogos compact />
       </Section>
 
@@ -175,7 +180,7 @@ export default function Home() {
       <Section
         eyebrow="Osuszanie i sprzątanie"
         title="Zarezerwuj termin online"
-        lead="Wynajem osuszaczy i sprzątanie — po remoncie, przy wynajmie i przed świętami. Termin potwierdzamy telefonicznie."
+        lead="Wynajem osuszaczy i sprzątanie — po wykończeniu, przy wynajmie i przed świętami. Termin potwierdzamy telefonicznie."
         action={{ href: "/rezerwacja/", label: "Przejdź do kalendarza" }}
       >
         <div className="grid gap-5 md:grid-cols-2">

@@ -5,7 +5,7 @@ import { Cta, PageHero, ReviewCard, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Opinie inwestorów",
-  description: "Opinie klientów o firmie DroBud z Wielunia — wykończenia wnętrz, łazienki, remonty.",
+  description: "Opinie klientów o firmie DroBud z Wielunia — kompleksowe wykończenia wnętrz i łazienki.",
   alternates: { canonical: "/opinie/" },
 };
 

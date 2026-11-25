@@ -19,7 +19,7 @@ export function Header() {
           <span className="leading-none">
             <span className="block text-xl font-bold tracking-[0.14em]">DROBUD</span>
             <span className="mt-1 hidden whitespace-nowrap text-[0.55rem] font-semibold tracking-[0.22em] text-muted sm:block">
-              WYKOŃCZENIA I REMONTY
+              KOMPLEKSOWE WYKOŃCZENIA
             </span>
           </span>
         </Link>

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | DroBud Wieluń",
   },
   description:
-    "DroBud Damian Drosiński — wykończenia wnętrz pod klucz, remonty łazienek, gładzie, płytki, zabudowy G-K, wynajem osuszaczy i sprzątanie po remoncie. Wieluń i okolice do 50 km.",
+    "DroBud Damian Drosiński — kompleksowe wykończenia domów i mieszkań pod klucz: łazienki, sufity podwieszane, gładzie polimerowe, gres, panele, tynki dekoracyjne, osuszanie i sprzątanie. Wieluń i okolice do 50 km.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",

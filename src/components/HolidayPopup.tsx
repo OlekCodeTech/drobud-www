@@ -92,7 +92,7 @@ export function HolidayPopup() {
           </a>
         </div>
         <Link
-          href="/uslugi/sprzatanie-po-remoncie/"
+          href="/uslugi/sprzatanie/"
           onClick={close}
           className="mt-4 inline-block text-sm font-semibold text-muted underline underline-offset-4 hover:text-ink"
         >

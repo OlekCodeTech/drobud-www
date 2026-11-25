@@ -22,8 +22,8 @@ export function localBusinessSchema() {
     email: site.email,
     slogan: site.slogan,
     award: [
-      "Firma Remontowo-Budowlana Roku 2026 w województwie łódzkim (Mistrzowie Budownictwa)",
-      "Szef Firmy Remontowo-Budowlanej Roku 2026 w województwie łódzkim (Mistrzowie Budownictwa)",
+      "Laureat plebiscytu Mistrzowie Budownictwa 2026 — województwo łódzkie (firma)",
+      "Laureat plebiscytu Mistrzowie Budownictwa 2026 — województwo łódzkie (Damian Drosiński)",
     ],
     foundingDate: String(site.since),
     address: {

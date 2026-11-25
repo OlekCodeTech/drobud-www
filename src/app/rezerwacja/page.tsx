@@ -4,9 +4,9 @@ import { PageHero } from "@/components/ui";
 import { BookingForm } from "@/components/BookingForm";
 
 export const metadata: Metadata = {
-  title: "Rezerwacja osuszaczy i sprzątania",
+  title: "Rezerwacja terminu — wykończenie, osuszacze, sprzątanie",
   description:
-    "Wstępna rezerwacja terminu online: wynajem osuszaczy oraz sprzątanie po remoncie, przed i po wynajmie i przed świętami — Wieluń i okolice.",
+    "Zapytaj online o termin wykończenia, zarezerwuj osuszacze lub sprzątanie po wykończeniu, przed i po wynajmie i przed świętami — Wieluń i okolice.",
   alternates: { canonical: "/rezerwacja/" },
 };
 
@@ -15,8 +15,8 @@ export default function Page() {
     <>
       <PageHero
         eyebrow="Rezerwacja"
-        title="Zarezerwuj osuszacz lub sprzątanie"
-        lead="Wybierz usługę i termin w kalendarzu. Rezerwację potwierdzamy telefonicznie."
+        title="Zapytaj o termin"
+        lead="Zapytaj o dowolny termin wykończenia albo zarezerwuj osuszacz lub sprzątanie. Termin potwierdzamy telefonicznie."
       />
       <section className="bg-paper">
         <div className="container-x py-14">

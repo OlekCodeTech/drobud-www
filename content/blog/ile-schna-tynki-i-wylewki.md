@@ -1,5 +1,5 @@
 ---
-title: "Ile schną tynki i wylewki? Kiedy można układać panele i montować drzwi"
+title: "Ile schną tynki i wylewki? Kiedy można układać panele i malować"
 description: "Orientacyjne czasy schnięcia tynków i wylewek, od czego zależą i jak przyspieszyć schnięcie osuszaczem, żeby nie wstrzymywać wykończenia."
 date: "2026-11-19"
 category: "Osuszanie"
@@ -73,7 +73,7 @@ Liczbę urządzeń dobiera się do kubatury i stopnia zawilgocenia. W domu jedno
 ## Kiedy osuszanie ma największy sens
 
 - budowa wchodzi w etap wykończenia jesienią lub zimą,
-- terminy dostaw podłóg i drzwi są już ustalone,
+- terminy dostaw podłóg są już ustalone,
 - wylewki są grube albo wykonane późno,
 - w budynku było zalanie lub przeciek.
 

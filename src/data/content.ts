@@ -81,6 +81,38 @@ export const projects: Project[] = [
     images: ["/realizacje/podloga-jodelka-dom.jpg"],
   },
   {
+    slug: "korytarz-efekt-betonu",
+    title: "Korytarz z efektem betonu",
+    category: "Salon",
+    city: "okolice Wielunia",
+    description: "Ściany z farbą strukturalną z efektem betonu i szyny oświetleniowe.",
+    images: ["/realizacje/korytarz-efekt-betonu.jpg"],
+  },
+  {
+    slug: "korytarz-jodelka-led",
+    title: "Korytarz z jodełką i oświetleniem liniowym",
+    category: "Podłogi",
+    city: "okolice Wielunia",
+    description: "Podłoga w jodełkę i sufit przygotowany pod linie światła.",
+    images: ["/realizacje/korytarz-jodelka-led.jpg"],
+  },
+  {
+    slug: "sufit-podwieszany-stelaz",
+    title: "Sufit podwieszany — stelaż",
+    category: "Poddasze",
+    city: "okolice Wielunia",
+    description: "Stelaż sufitu podwieszanego przed montażem płyt.",
+    images: ["/realizacje/sufit-podwieszany-stelaz.jpg"],
+  },
+  {
+    slug: "adaptacja-poddasza-w-trakcie",
+    title: "Adaptacja poddasza — w trakcie prac",
+    category: "Poddasze",
+    city: "okolice Wielunia",
+    description: "Konstrukcja pod sufit i skosy na poddaszu.",
+    images: ["/realizacje/poddasze-stelaz.jpg"],
+  },
+  {
     slug: "schody-wiszace",
     title: "Schody wiszące — w trakcie prac",
     category: "Schody",
@@ -98,7 +130,7 @@ export const team: Person[] = [
   {
     name: "Damian Drosiński",
     role: "Właściciel",
-    bio: "Założyciel DroBud. Laureat tytułu Szef Firmy Remontowo-Budowlanej Roku 2026 w województwie łódzkim w plebiscycie Mistrzowie Budownictwa.",
+    bio: "Założyciel DroBud, ponad 10 lat doświadczenia w wykończeniach wnętrz. Laureat plebiscytu Mistrzowie Budownictwa 2026 w województwie łódzkim.",
     photo: "/zespol/damian.jpg",
   },
   {
@@ -122,14 +154,14 @@ export type Award = { title: string; detail: string; image: string; imageAlt: st
 
 export const awards: Award[] = [
   {
-    title: "Firma Remontowo-Budowlana Roku 2026",
-    detail: "Mistrzowie Budownictwa, województwo łódzkie (Dziennik Łódzki)",
+    title: "Laureat Mistrzowie Budownictwa 2026",
+    detail: "Wyróżnienie dla firmy DroBud, województwo łódzkie (Dziennik Łódzki)",
     image: "/nagrody/statuetki-mistrzowie-budownictwa-2026.jpg",
     imageAlt: "Statuetki Mistrzowie Budownictwa 2026 dla DroBud",
   },
   {
-    title: "Szef Firmy Remontowo-Budowlanej Roku 2026",
-    detail: "Mistrzowie Budownictwa, województwo łódzkie — Damian Drosiński",
+    title: "Laureat Mistrzowie Budownictwa 2026 — szef firmy",
+    detail: "Damian Drosiński, gala Polska Press, województwo łódzkie",
     image: "/nagrody/gala-polska-press.jpg",
     imageAlt: "Damian Drosiński ze statuetką na gali Polska Press",
   },
@@ -150,19 +182,21 @@ export type Video = {
 
 // Filmy z dysku klienta, skompresowane do public/wideo/<id>.mp4 + okładka <id>.jpg.
 export const videos: Video[] = [
-  { id: "v02", title: "Łazienka z płytą kamienną i oświetleniem liniowym", services: ["remonty-lazienek", "sufity-podwieszane"] },
-  { id: "v03", title: "Łazienka z wanną wolnostojącą", services: ["remonty-lazienek", "ukladanie-plytek"] },
-  { id: "v10", title: "Jodełka i oświetlenie liniowe w strefie dziennej", services: ["podlogi-i-drzwi", "wykonczenia-pod-klucz"] },
-  { id: "v05", title: "Sufit podwieszany z podświetleniem", services: ["sufity-podwieszane"] },
-  { id: "v14", title: "Łazienka z tapetą i odpływem liniowym", services: ["remonty-lazienek"] },
-  { id: "v07", title: "Łazienka z płytkami patchwork i zabudową", services: ["remonty-lazienek", "ukladanie-plytek"] },
-  { id: "v09", title: "Prysznic walk-in z płytą o wzorze kamienia", services: ["remonty-lazienek", "ukladanie-plytek"] },
-  { id: "v08", title: "Prysznic z płytkami drewnopodobnymi", services: ["remonty-lazienek", "ukladanie-plytek"] },
-  { id: "v11", title: "Łazienka — efekt końcowy", services: ["remonty-lazienek"] },
-  { id: "v01", title: "Za każdym etapem realizacji stoi konkretna osoba", services: ["wykonczenia-pod-klucz"] },
-  { id: "v04", title: "Przygotowanie ścian pod wykończenie", services: ["gladzie-i-malowanie", "sufity-podwieszane"] },
-  { id: "v06", title: "Ekipa przy pracy", services: ["sufity-podwieszane", "wykonczenia-pod-klucz"] },
-  { id: "v13", title: "Zabudowa sufitu na poddaszu", services: ["adaptacja-poddasza", "sufity-podwieszane"] },
+  // Pierwsze trzy z nazw nadanych przez klienta na dysku (24.11.2026); v01 („Strona główna”) jest w hero.
+  { id: "v02", title: "Wykończenie domów i mieszkań", services: ["wykonczenia-pod-klucz"] },
+  { id: "v15", title: "Wykończenie łazienki", services: ["wykonczenia-lazienek"] },
+  { id: "v16", title: "Gładzie polimerowe", services: ["gladzie-polimerowe"] },
+  { id: "v05", title: "Farby strukturalne i tynki dekoracyjne", services: ["tynki-dekoracyjne"] },
+  { id: "v10", title: "Układanie gresu i płytek", services: ["ukladanie-plytek"] },
+  { id: "v13", title: "Sufit podwieszany na poddaszu", services: ["sufity-podwieszane"] },
+  { id: "v09", title: "Łazienka z podświetlanym lustrem", services: ["wykonczenia-lazienek"] },
+  { id: "v03", title: "Łazienka z wanną wolnostojącą", services: ["wykonczenia-lazienek"] },
+  { id: "v14", title: "Łazienka z odpływem liniowym", services: ["wykonczenia-lazienek"] },
+  { id: "v07", title: "Łazienka z płytkami patchwork", services: ["wykonczenia-lazienek"] },
+  { id: "v08", title: "Prysznic z płytkami drewnopodobnymi", services: ["wykonczenia-lazienek"] },
+  { id: "v11", title: "Łazienka — efekt końcowy", services: ["wykonczenia-lazienek"] },
+  { id: "v04", title: "Przygotowanie ścian pod malowanie", services: ["malowanie"] },
+  { id: "v06", title: "Ekipa przy pracy", services: [] },
   { id: "v12", title: "Gala Mistrzowie Budownictwa 2026", services: [] },
 ];
 

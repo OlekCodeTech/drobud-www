@@ -139,26 +139,23 @@ export function Section({
 }
 
 export function ServiceCard({ service, index }: { service: Service; index: number }) {
-  const img = service.images?.[0];
   return (
     <Link
       href={`/uslugi/${service.slug}/`}
-      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white transition-shadow hover:shadow-lg"
+      className="group flex h-full flex-col rounded-2xl border border-line bg-white p-5 transition-shadow hover:shadow-lg"
     >
-      {img && (
-        <div className="relative aspect-[16/9] overflow-hidden bg-paper">
-          <Image
-            src={img}
-            alt=""
-            fill
-            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        </div>
-      )}
-      <div className="flex flex-1 flex-col p-5">
+      <div className="flex items-center gap-4">
+        <Image
+          src={service.icon}
+          alt=""
+          width={80}
+          height={80}
+          className="h-20 w-20 shrink-0 transition-transform duration-300 group-hover:scale-105"
+        />
         <span className="text-xs font-bold text-accent-dark">{String(index + 1).padStart(2, "0")}</span>
-        <h3 className="mt-2 text-lg font-extrabold leading-snug">{service.title}</h3>
+      </div>
+      <div className="mt-4 flex flex-1 flex-col">
+        <h3 className="text-lg font-extrabold leading-snug">{service.title}</h3>
         <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{service.short}</p>
         <span className="mt-4 text-sm font-bold group-hover:text-accent-dark">Zobacz szczegóły →</span>
       </div>
@@ -170,9 +167,7 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <article>
       <Photo src={project.images[0]} alt={`${project.title} — ${project.city}`} className="aspect-[4/3]" />
-      <p className="mt-3 text-xs font-bold uppercase tracking-wider text-accent-dark">
-        {project.category} · {project.city}
-      </p>
+      <p className="mt-3 text-xs font-bold uppercase tracking-wider text-accent-dark">{project.city}</p>
       <h3 className="mt-1 text-base font-extrabold leading-snug">{project.title}</h3>
     </article>
   );

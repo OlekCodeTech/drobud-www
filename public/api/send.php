@@ -79,6 +79,7 @@ $lines = [
     'Usługa' => field('usluga'),
     'Metraż (m2)' => field('metraz', 6),
     'Rodzaj sprzątania' => field('rodzaj_sprzatania'),
+    'Zakres prac' => field('zakres'),
     'Stanowisko' => field('stanowisko'),
     'Doświadczenie' => field('doswiadczenie'),
 ];

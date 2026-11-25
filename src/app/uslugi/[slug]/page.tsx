@@ -3,8 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getService, services } from "@/data/services";
 import { longContent } from "@/data/services-content";
-import { cities, videos } from "@/data/content";
-import { VideoGrid } from "@/components/media";
+import { cities } from "@/data/content";
+import { asset } from "@/lib/asset";
 import { site } from "@/data/site";
 import { getPosts } from "@/lib/blog";
 import { Cta, Faq, PageHero, Photo, Prose, Section, ServiceCard } from "@/components/ui";
@@ -36,9 +36,7 @@ export default async function Page({ params }: Props) {
 
   const long = longContent[service.slug];
   const faq = [...service.faq, ...(long?.faq ?? [])];
-  const serviceVideos = videos.filter((v) => v.services.includes(service.slug));
-  // Naprzemienne tła sekcji; zależą od tego, czy usługa ma filmy.
-  const tone = (n: number): "white" | "paper" => ((n + (serviceVideos.length > 0 ? 1 : 0)) % 2 ? "paper" : "white");
+  const tone = (n: number): "white" | "paper" => (n % 2 ? "paper" : "white");
   const posts = getPosts().filter((p) => p.service === service.slug);
   const others = services.filter((s) => s.slug !== service.slug).slice(0, 3);
 
@@ -69,23 +67,32 @@ export default async function Page({ params }: Props) {
               </li>
             ))}
           </ul>
-          {/* TODO: zdjęcia dla usług bez własnych realizacji (gładzie, tynki, sprzątanie) */}
-          <div className="grid grid-cols-2 gap-4">
-            <Photo src={service.images?.[0]} alt={`${service.title} — realizacja DroBud`} className="aspect-square" />
-            <Photo src={service.images?.[1]} alt={`${service.title} — realizacja DroBud`} className="aspect-square" />
-          </div>
+          {/* Jeden film na usługę (wg klienta); bez filmu — zdjęcia realizacji. */}
+          {service.video ? (
+            <div className="mx-auto w-full max-w-xs lg:ml-auto lg:mr-0">
+              <video
+                controls
+                playsInline
+                preload="none"
+                poster={asset(`/wideo/${service.video}.jpg`)}
+                className="aspect-[9/16] w-full rounded-2xl bg-ink object-cover"
+                aria-label={`${service.title} — film z realizacji DroBud`}
+              >
+                <source src={asset(`/wideo/${service.video}.mp4`)} type="video/mp4" />
+              </video>
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 gap-4">
+              <Photo src={service.images?.[0]} alt={`${service.title} — realizacja DroBud`} className="aspect-square" />
+              <Photo src={service.images?.[1]} alt={`${service.title} — realizacja DroBud`} className="aspect-square" />
+            </div>
+          )}
         </div>
       </Section>
 
       {long && (
         <Section tone="paper">
           <Prose sections={long.sections} />
-        </Section>
-      )}
-
-      {serviceVideos.length > 0 && (
-        <Section eyebrow="Filmy" title="Zobacz nasze realizacje">
-          <VideoGrid items={serviceVideos} limit={4} />
         </Section>
       )}
 

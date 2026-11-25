@@ -1,6 +1,6 @@
 ---
 title: "Zalane mieszkanie — co robić krok po kroku i jak osuszyć ściany"
-description: "Co zrobić po zalaniu mieszkania lub domu: pierwsze kroki, dokumentacja dla ubezpieczyciela, osuszanie ścian i podłóg oraz kiedy zacząć remont."
+description: "Co zrobić po zalaniu mieszkania lub domu: pierwsze kroki, dokumentacja dla ubezpieczyciela, osuszanie ścian i podłóg oraz kiedy zacząć prace naprawcze."
 date: "2026-11-19"
 category: "Osuszanie"
 service: "wynajem-osuszaczy"
@@ -52,15 +52,14 @@ Do osuszania używa się **osuszaczy kondensacyjnych**, które zbierają wilgoć
 
 Osuszacze w Wieluniu i okolicy można wstępnie zarezerwować w [kalendarzu rezerwacji](/rezerwacja/?usluga=osuszacze).
 
-## Krok 5: remont po zalaniu
+## Krok 5: naprawy i wykończenie po zalaniu
 
 Dopiero po wyschnięciu przegród można przystąpić do napraw:
 
 - usunięcie odspojonych tynków, gładzi i farb,
 - odgrzybienie miejsc, w których pojawiła się pleśń,
-- ponowne szpachlowanie i [malowanie](/uslugi/gladzie-i-malowanie/),
-- wymiana [podłóg i listew](/uslugi/podlogi-i-drzwi/),
-- naprawa lub wymiana ościeżnic i drzwi.
+- ponowne [gładzie](/uslugi/gladzie-polimerowe/) i [malowanie](/uslugi/malowanie/),
+- wymiana [paneli podłogowych i listew](/uslugi/panele-podlogowe/).
 
 Zbyt wczesne malowanie to najczęstszy błąd — zacieki wychodzą ponownie, a farba się łuszczy.
 
@@ -73,4 +72,4 @@ Zbyt wczesne malowanie to najczęstszy błąd — zacieki wychodzą ponownie, a 
 
 ## Podsumowanie
 
-Kolejność jest prosta: bezpieczeństwo, zatrzymanie wody, dokumentacja, usunięcie wody, osuszanie i dopiero na końcu remont. Jeżeli potrzebujesz osuszaczy albo naprawy mieszkania po zalaniu w Wieluniu lub okolicy, [skontaktuj się z nami](/kontakt/).
+Kolejność jest prosta: bezpieczeństwo, zatrzymanie wody, dokumentacja, usunięcie wody, osuszanie i dopiero na końcu prace naprawcze i wykończeniowe. Jeżeli potrzebujesz osuszaczy albo naprawy mieszkania po zalaniu w Wieluniu lub okolicy, [skontaktuj się z nami](/kontakt/).

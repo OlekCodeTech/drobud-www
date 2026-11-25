@@ -1,4 +1,6 @@
-// Lista usług wg Damiana (20.11.2026). Treści robocze — do akceptacji przez klienta.
+// Lista usług wg Damiana (ikony z dysku, 23.11.2026). Treści robocze — do akceptacji przez klienta.
+// Zasady od klienta: bez słowa „remont” (zamiast tego wykończenia kompleksowe), bez montażu drzwi i tapet,
+// pod oświetlenie LED tylko przygotowujemy (nie wykonujemy instalacji).
 
 export type Service = {
   slug: string;
@@ -7,6 +9,10 @@ export type Service = {
   lead: string;
   scope: string[];
   faq: { q: string; a: string }[];
+  /** Ikona usługi (public/ikony/). */
+  icon: string;
+  /** Jeden film na podstronie usługi (public/wideo/<id>.mp4). */
+  video?: string;
   /** Usługa z kalendarzem wstępnej rezerwacji. */
   booking?: "osuszacze" | "sprzatanie";
   /** Zdjęcia do sekcji „Zakres” (public/…). */
@@ -17,12 +23,12 @@ export const services: Service[] = [
   {
     slug: "wykonczenia-pod-klucz",
     title: "Wykończenia domów i mieszkań pod klucz",
-    short: "Nasza specjalność: kompleksowe wykończenie domów i mieszkań w stanie deweloperskim.",
-    lead: "Specjalizujemy się w kompleksowych wykończeniach domów oraz mieszkań w stanie deweloperskim. Jedna ekipa prowadzi wszystkie etapy — od gładzi i zabudów, przez łazienki i podłogi, po sprzątanie przed wprowadzeniem.",
+    short: "Nasza specjalność: kompleksowe wykończenia domów i mieszkań w stanie deweloperskim.",
+    lead: "Specjalizujemy się w kompleksowych wykończeniach domów oraz mieszkań w stanie deweloperskim. Jedna ekipa prowadzi wszystkie etapy — od gładzi i sufitów, przez łazienki i podłogi, po sprzątanie przed wprowadzeniem.",
     scope: [
-      "Wykończenie domów i mieszkań w stanie deweloperskim",
+      "Kompleksowe wykończenie domów i mieszkań w stanie deweloperskim",
       "Łazienki, sufity podwieszane, gładzie i malowanie",
-      "Płytki, gres i panele podłogowe",
+      "Gres i panele podłogowe",
       "Tynki dekoracyjne i farby strukturalne",
       "Adaptacja poddaszy",
       "Sprzątanie po zakończeniu prac",
@@ -37,20 +43,21 @@ export const services: Service[] = [
         a: "Tak. Dojeżdżamy do klientów w promieniu około 50 km od Wielunia, m.in. do Praszki, Wieruszowa, Pajęczna, Działoszyna i Sieradza.",
       },
     ],
-    images: ["/realizacje/salon-jodelka-przeszklenia.jpg", "/realizacje/salon-kominek-oswietlenie-liniowe.jpg"],
+    icon: "/ikony/wykonczenia-pod-klucz.png",
+    video: "v02",
+    images: ["/realizacje/salon-jodelka-przeszklenia.jpg", "/realizacje/korytarz-jodelka-led.jpg"],
   },
   {
-    slug: "remonty-lazienek",
-    title: "Wykończenia i remonty łazienek",
-    short: "Kompleksowe łazienki: płytki wielkoformatowe, zabudowy, prysznice walk-in, oświetlenie LED.",
-    lead: "Łazienki to nasza wizytówka. Wykonujemy je od surowych ścian po gotowe pomieszczenie — z zabudowami, wnękami, podświetleniem i starannym wykończeniem detali.",
+    slug: "wykonczenia-lazienek",
+    title: "Wykończenia łazienek",
+    short: "Kompleksowe łazienki: płytki wielkoformatowe, zabudowy stelaży, prysznice walk-in, wnęki pod LED.",
+    lead: "Łazienki to nasza wizytówka. Wykańczamy je od surowych ścian po gotowe pomieszczenie — z zabudowami, wnękami przygotowanymi pod podświetlenie i starannym wykończeniem detali.",
     scope: [
       "Układanie płytek, w tym dużych formatów i mozaiki",
       "Zabudowy stelaży, wnęki i półki",
       "Montaż wanien, w tym wolnostojących, kabin i odpływów liniowych",
       "Biały montaż i armatura",
-      "Oświetlenie LED w zabudowach",
-      "Łazienki na poddaszu i w skosach",
+      "Wnęki i zabudowy przygotowane pod oświetlenie LED",
     ],
     faq: [
       {
@@ -62,71 +69,81 @@ export const services: Service[] = [
         a: "Tak. W formularzu wyceny można dołączyć zdjęcia i projekt, co bardzo ułatwia rozmowę o zakresie.",
       },
     ],
+    icon: "/ikony/lazienki.png",
+    video: "v15",
     images: ["/realizacje/lazienka-poddasze-wanna.jpg", "/realizacje/lazienka-marmur-mozaika.jpg"],
   },
   {
     slug: "sufity-podwieszane",
-    title: "Sufity podwieszane i zabudowy G-K",
-    short: "Sufity podwieszane z oświetleniem LED i liniowym, zabudowy kominkowe, RTV i ścianki działowe.",
-    lead: "Z płyt gipsowo-kartonowych wykonujemy sufity podwieszane, ścianki działowe i zabudowy na wymiar — także pod kominek, telewizor i oświetlenie liniowe.",
+    title: "Sufity podwieszane i adaptacja poddaszy",
+    short: "Sufity podwieszane przygotowane pod oświetlenie LED oraz adaptacja poddaszy od ocieplenia do wykończenia.",
+    lead: "Wykonujemy sufity podwieszane jedno- i wielopoziomowe, przygotowane pod oświetlenie LED i liniowe, oraz adaptujemy poddasza — od ocieplenia, przez stelaż i płyty, po gotowe do zamieszkania pomieszczenia.",
     scope: [
       "Sufity podwieszane jedno- i wielopoziomowe",
-      "Wnęki na taśmy LED i oświetlenie liniowe",
-      "Zabudowy kominkowe i RTV",
-      "Ścianki działowe, wnęki i półki",
-      "Zabudowa skosów na poddaszu",
+      "Sufity przygotowane pod oświetlenie LED i liniowe",
+      "Adaptacja poddaszy",
+      "Ocieplenie dachu i poddasza",
+      "Gładzie, malowanie i podłogi na poddaszu",
     ],
     faq: [
       {
-        q: "Czy wykonujecie zabudowy według projektu wnętrz?",
-        a: "Tak, pracujemy na podstawie projektów od architektów i projektantów wnętrz. Projekt można dołączyć do zapytania.",
+        q: "Czy montujecie oświetlenie LED w sufitach?",
+        a: "Przygotowujemy sufity i wnęki pod oświetlenie LED i liniowe — profile, wnęki i miejsca na oprawy. Samą instalację elektryczną wykonuje elektryk.",
       },
-    ],
-    images: ["/realizacje/salon-kominek-oswietlenie-liniowe.jpg", "/realizacje/lazienka-poddasze-wanna.jpg"],
-  },
-  {
-    slug: "adaptacja-poddasza",
-    title: "Adaptacja poddaszy",
-    short: "Ocieplenie, zabudowa i wykończenie poddasza — od strychu do gotowych pomieszczeń.",
-    lead: "Zamieniamy nieużytkowe poddasza i strychy w pełnowartościowe pomieszczenia. Wykonujemy ocieplenie, zabudowę skosów i ścianek, a następnie wykończenie pod klucz.",
-    scope: [
-      "Ocieplenie dachu i poddasza",
-      "Zabudowa skosów i ścianek kolankowych płytami G-K",
-      "Ścianki działowe i sufity",
-      "Gładzie, malowanie i podłogi",
-      "Łazienki na poddaszu",
-    ],
-    faq: [
       {
         q: "Czy po ociepleniu wykonujecie też wykończenie poddasza?",
-        a: "Tak, możemy zrealizować całość: ocieplenie, zabudowę, gładzie, malowanie, podłogi i łazienkę.",
+        a: "Tak, możemy zrealizować całość: ocieplenie, sufity, gładzie, malowanie i podłogi.",
       },
     ],
-    images: ["/realizacje/lazienka-poddasze-wanna.jpg"],
+    icon: "/ikony/sufity-poddasza.png",
+    video: "v13",
+    images: ["/realizacje/sufit-podwieszany-stelaz.jpg", "/realizacje/poddasze-stelaz.jpg"],
   },
   {
-    slug: "gladzie-i-malowanie",
-    images: ["/wideo/v04.jpg", "/realizacje/podloga-jodelka-dom.jpg"],
-    title: "Gładzie polimerowe i malowanie",
-    short: "Gładzie polimerowe, szlifowanie z odsysaniem pyłu i malowanie ścian oraz sufitów.",
-    lead: "Przygotowujemy ściany i sufity pod ostateczne wykończenie. Stosujemy gładzie polimerowe, szlifujemy z odsysaniem pyłu i malujemy, dzięki czemu powierzchnie są równe, a na budowie czyściej.",
+    slug: "gladzie-polimerowe",
+    title: "Gładzie polimerowe",
+    short: "Idealnie gładkie ściany i sufity, szlifowanie z odsysaniem pyłu.",
+    lead: "Przygotowujemy ściany i sufity pod malowanie. Stosujemy gładzie polimerowe i szlifujemy z odsysaniem pyłu, dzięki czemu powierzchnie są równe, a na budowie czyściej.",
     scope: [
-      "Gładzie polimerowe i gipsowe",
+      "Gładzie polimerowe na ścianach i sufitach",
       "Szlifowanie mechaniczne z odsysaniem pyłu",
-      "Gruntowanie i malowanie ścian oraz sufitów",
       "Naprawa pęknięć i ubytków",
-      "Obróbka wnęk okiennych i futryn",
+      "Obróbka wnęk okiennych",
+      "Gruntowanie przed malowaniem",
     ],
     faq: [
       {
-        q: "Czy malujecie również lokale firmowe?",
-        a: "Tak, malujemy mieszkania, domy oraz lokale usługowe i biura.",
+        q: "Czy szlifowanie gładzi bardzo pyli?",
+        a: "Szlifujemy mechanicznie z odsysaniem pyłu do odkurzacza przemysłowego, dzięki czemu pyłu jest znacznie mniej niż przy szlifowaniu ręcznym.",
       },
     ],
+    icon: "/ikony/gladzie.png",
+    video: "v16",
+    images: ["/wideo/v16.jpg", "/realizacje/podloga-jodelka-dom.jpg"],
+  },
+  {
+    slug: "malowanie",
+    title: "Malowanie ścian i sufitów",
+    short: "Malowanie domów, mieszkań i lokali farbami dobranymi do pomieszczenia.",
+    lead: "Malujemy ściany i sufity w domach, mieszkaniach i lokalach. Farby dobieramy do pomieszczenia — inne do salonu, inne do kuchni i łazienki, gdzie liczy się odporność na wilgoć i zmywanie.",
+    scope: [
+      "Malowanie ścian i sufitów",
+      "Gruntowanie i przygotowanie podłoża",
+      "Malowanie lokali usługowych i biur",
+      "Zabezpieczenie podłóg, okien i mebli",
+    ],
+    faq: [
+      {
+        q: "Czy można zlecić samo malowanie, bez gładzi?",
+        a: "Tak, malujemy także bez wykonywania gładzi, jeżeli ściany są w dobrym stanie.",
+      },
+    ],
+    icon: "/ikony/malowanie.png",
+    video: "v04",
+    images: ["/wideo/v04.jpg"],
   },
   {
     slug: "tynki-dekoracyjne",
-    images: ["/realizacje/salon-kominek-oswietlenie-liniowe.jpg"],
     title: "Tynki dekoracyjne i farby strukturalne",
     short: "Ściany z charakterem: tynki dekoracyjne, efekt betonu, farby strukturalne.",
     lead: "Wykonujemy ściany dekoracyjne, które stają się ozdobą salonu, korytarza czy sypialni: tynki dekoracyjne, efekt betonu i kamienia oraz farby strukturalne.",
@@ -143,17 +160,20 @@ export const services: Service[] = [
         a: "Tak. Najczęściej wykonuje się go na ścianie akcentowej — za telewizorem, przy kominku albo w korytarzu.",
       },
     ],
+    icon: "/ikony/tynki.png",
+    video: "v05",
+    images: ["/realizacje/korytarz-efekt-betonu.jpg", "/realizacje/korytarz-efekt-betonu-2.jpg"],
   },
   {
     slug: "ukladanie-plytek",
-    title: "Układanie płytek i gresu",
-    short: "Gres wielkoformatowy, glazura i mozaiki — w łazienkach, kuchniach, salonach i na schodach.",
-    lead: "Układamy płytki ścienne i podłogowe z dbałością o cięcia, fugi i narożniki. Pracujemy z gresem wielkoformatowym i płytkami imitującymi marmur.",
+    title: "Układanie gresu i płytek",
+    short: "Gres wielkoformatowy, płytki drewnopodobne w jodełkę, glazura i mozaiki.",
+    lead: "Układamy gres i płytki na podłogach i ścianach z dbałością o cięcia, fugi i narożniki. Pracujemy z dużymi formatami, płytkami drewnopodobnymi (także w jodełkę) i płytkami imitującymi marmur.",
     scope: [
       "Gres podłogowy, także wielkoformatowy",
+      "Płytki drewnopodobne, także w jodełkę",
       "Płytki ścienne i mozaiki",
       "Okładziny schodów",
-      "Narożniki szlifowane pod kątem",
       "Fugowanie i silikonowanie",
     ],
     faq: [
@@ -162,25 +182,28 @@ export const services: Service[] = [
         a: "Tak. Możemy też doradzić przy wyborze formatu i ilości materiału.",
       },
     ],
-    images: ["/realizacje/lazienka-wanna-wolnostojaca.jpg", "/realizacje/lazienka-marmur-mozaika.jpg"],
+    icon: "/ikony/gres.png",
+    video: "v10",
+    images: ["/realizacje/lazienka-wanna-wolnostojaca.jpg", "/wideo/v10.jpg"],
   },
   {
-    slug: "podlogi-i-drzwi",
-    title: "Panele podłogowe i montaż drzwi",
-    short: "Panele, także w jodełkę, listwy przypodłogowe i drzwi wewnętrzne.",
-    lead: "Układamy panele podłogowe — również w jodełkę — montujemy listwy i drzwi wewnętrzne. Jako osobną usługę albo część wykończenia pod klucz.",
+    slug: "panele-podlogowe",
+    title: "Panele podłogowe",
+    short: "Panele, także w jodełkę, z listwami przypodłogowymi.",
+    lead: "Układamy panele podłogowe — również w jodełkę — razem z listwami przypodłogowymi. Jako osobną usługę albo część kompleksowego wykończenia.",
     scope: [
       "Układanie paneli podłogowych, także w jodełkę",
       "Montaż listew przypodłogowych",
-      "Montaż drzwi wewnętrznych i ościeżnic",
       "Przygotowanie i wyrównanie podłoża",
+      "Podkłady, także pod ogrzewanie podłogowe",
     ],
     faq: [
       {
-        q: "Czy mogę zamówić sam montaż drzwi?",
-        a: "Tak, opisz liczbę drzwi i ich rodzaj w formularzu wyceny.",
+        q: "Czy układacie panele na ogrzewaniu podłogowym?",
+        a: "Tak. Dobieramy podkład przeznaczony do ogrzewania podłogowego i sprawdzamy wilgotność wylewki przed montażem.",
       },
     ],
+    icon: "/ikony/panele.png",
     images: ["/realizacje/podloga-jodelka-dom.jpg", "/realizacje/salon-jodelka-przeszklenia.jpg"],
   },
   {
@@ -200,14 +223,15 @@ export const services: Service[] = [
         a: "Wybierz termin w kalendarzu rezerwacji i zostaw numer telefonu. Rezerwacja jest wstępna — potwierdzamy ją telefonicznie.",
       },
     ],
+    icon: "/ikony/osuszanie.png",
     booking: "osuszacze",
     images: ["/osuszacze/climative-dhp-50-pro.jpg", "/osuszacze/osuszanie-zastosowania.jpg"],
   },
   {
-    slug: "sprzatanie-po-remoncie",
+    slug: "sprzatanie",
     title: "Sprzątanie domów, mieszkań i lokali",
-    short: "Nowa usługa: sprzątanie po remoncie, przed i po wynajmie oraz przedświąteczne porządki.",
-    lead: "Chcąc zaoszczędzić Wasz czas i energię, poszerzyliśmy ofertę o profesjonalne sprzątanie domów, mieszkań i lokali: po wykończeniu lub remoncie, przed i po wynajmie oraz przed świętami i innymi okazjami.",
+    short: "Sprzątanie po wykończeniu, przed i po wynajmie oraz przedświąteczne porządki.",
+    lead: "Chcąc zaoszczędzić Wasz czas i energię, poszerzyliśmy ofertę o profesjonalne sprzątanie domów, mieszkań i lokali: po wykończeniu, przed i po wynajmie oraz przed świętami i innymi okazjami.",
     scope: [
       "Dokładne sprzątanie całego domu lub mieszkania",
       "Usuwanie pyłu budowlanego i pozostałości po pracach",
@@ -215,7 +239,6 @@ export const services: Service[] = [
       "Sprzątanie łazienek — dezynfekcja i wybłyszczanie",
       "Mycie okien, przeszkleń, ram i parapetów",
       "Czyszczenie podłóg, płytek i fug",
-      "Mycie drzwi, listew i innych powierzchni",
       "Odświeżenie pomieszczeń przed przyjęciem gości",
     ],
     faq: [
@@ -224,6 +247,7 @@ export const services: Service[] = [
         a: "Wybierz dzień w kalendarzu rezerwacji, rodzaj sprzątania i metraż. Termin potwierdzamy telefonicznie.",
       },
     ],
+    icon: "/ikony/sprzatanie.png",
     booking: "sprzatanie",
   },
 ];

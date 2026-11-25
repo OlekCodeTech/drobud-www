@@ -10,7 +10,7 @@ import { Awards, VideoGrid } from "@/components/media";
 export const metadata: Metadata = {
   title: "Zespół — poznaj ekipę DroBud",
   description:
-    "Poznaj ekipę DroBud z Wielunia — ludzi, którzy wykończą Twoje wnętrze. Firma Remontowo-Budowlana Roku 2026 w województwie łódzkim.",
+    "Poznaj ekipę DroBud z Wielunia — ludzi, którzy wykończą Twoje wnętrze. Laureat plebiscytu Mistrzowie Budownictwa 2026.",
   alternates: { canonical: "/zespol/" },
 };
 
@@ -66,7 +66,7 @@ export default function Page() {
         <Awards items={awards} />
       </Section>
 
-      <Section tone="paper" eyebrow="Sprzęt" title="Pracujemy na profesjonalnym sprzęcie">
+      <Section tone="paper" eyebrow="Sprzęt i materiały" title="Pracujemy na sprawdzonych markach">
         <BrandLogos />
       </Section>
 

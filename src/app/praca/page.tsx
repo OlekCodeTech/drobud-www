@@ -8,9 +8,9 @@ import { VideoGrid } from "@/components/media";
 import { JsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Oferty pracy — glazurnik Wieluń",
+  title: "Oferty pracy — glazurnik, monter suchej zabudowy Wieluń",
   description:
-    "Praca w DroBud w Wieluniu: szukamy glazurnika — umowa o pracę, atrakcyjne wynagrodzenie, możliwość stażu. Aplikuj online.",
+    "Praca w DroBud w Wieluniu: szukamy glazurnika i montera suchej zabudowy — umowa o pracę, atrakcyjne wynagrodzenie, możliwość stażu. Aplikuj online.",
   alternates: { canonical: "/praca/" },
 };
 
@@ -18,8 +18,8 @@ const about = [
   {
     h: "Praca przy wykończeniach wnętrz w Wieluniu",
     p: [
-      "DroBud to firma wykończeniowa z Wielunia, która od 2020 roku wykańcza domy i mieszkania pod klucz. W 2026 roku zdobyliśmy tytuł Firmy Remontowo-Budowlanej Roku w województwie łódzkim w plebiscycie Mistrzowie Budownictwa. Rozwijamy się i chętnie poznajemy dobrych fachowców.",
-      "Nie widzisz oferty dla siebie? Wyślij zgłoszenie mimo to — jeśli trafi się odpowiednia osoba, chętnie ją przyjmiemy. Pracujemy na profesjonalnym sprzęcie marek DeWalt, Mirka, Starmix i Makita.",
+      "DroBud to firma z Wielunia, która zajmuje się kompleksowymi wykończeniami domów i mieszkań. Pracujemy w zgranym zespole, na nowych budowach w Wieluniu i okolicach. Rozwijamy się i chętnie poznajemy dobrych fachowców.",
+      "Nie widzisz oferty dla siebie? Wyślij zgłoszenie mimo to — jeśli trafi się odpowiednia osoba, chętnie ją przyjmiemy. Pracujemy na profesjonalnym sprzęcie marek DeWalt, Makita, Bosch, Mirka i Starmix.",
     ],
   },
 ];
@@ -82,7 +82,7 @@ export default function Page() {
       <PageHero
         eyebrow="Praca"
         title="Oferty pracy w DroBud"
-        lead="Dołącz do ekipy Firmy Remontowo-Budowlanej Roku 2026. Aplikuj online — zgłoszenie trafia bezpośrednio do właściciela firmy."
+        lead="Szukamy fachowców do zespołu wykończeniowego w Wieluniu i okolicach. Wypełnij krótki formularz i dołącz CV — odezwiemy się."
       >
         <a href="#aplikuj" className="btn-gold">
           Aplikuj teraz

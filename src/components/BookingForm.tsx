@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { Consent, ContactFields, FormStatus, Honeypot, useSubmit } from "@/components/forms";
 
-type Kind = "osuszacze" | "sprzatanie";
+type Kind = "osuszacze" | "sprzatanie" | "wykonczenie";
 
 const WEEKDAYS = ["Pn", "Wt", "Śr", "Cz", "Pt", "So", "Nd"];
 const MONTHS = [
@@ -121,7 +121,8 @@ function Calendar({
 
 export function BookingForm() {
   const params = useSearchParams();
-  const initial: Kind = params.get("usluga") === "sprzatanie" ? "sprzatanie" : "osuszacze";
+  const fromUrl = params.get("usluga");
+  const initial: Kind = fromUrl === "sprzatanie" || fromUrl === "wykonczenie" ? fromUrl : "osuszacze";
   const [kind, setKind] = useState<Kind>(initial);
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
@@ -135,7 +136,7 @@ export function BookingForm() {
     return (
       <FormStatus
         status={status}
-        okText="Dziękujemy! Wstępna rezerwacja dotarła. Zadzwonimy, żeby potwierdzić termin."
+        okText="Dziękujemy! Zgłoszenie dotarło. Zadzwonimy, żeby potwierdzić termin."
       />
     );
   }
@@ -153,18 +154,23 @@ export function BookingForm() {
       }}
     >
       <input type="hidden" name="typ" value="rezerwacja" />
-      <input type="hidden" name="usluga" value={range ? "Wynajem osuszaczy" : "Sprzątanie"} />
+      <input
+        type="hidden"
+        name="usluga"
+        value={range ? "Wynajem osuszaczy" : kind === "sprzatanie" ? "Sprzątanie" : "Termin wykończenia"}
+      />
       <input type="hidden" name="termin_od" value={from} />
       <input type="hidden" name="termin_do" value={to} />
       <Honeypot />
 
       <fieldset>
         <legend className="label">Co rezerwujesz?</legend>
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid gap-3 sm:grid-cols-3">
           {(
             [
+              ["wykonczenie", "Termin wykończenia", "Zapytaj o dowolny termin rozpoczęcia prac"],
               ["osuszacze", "Wynajem osuszaczy", "Wybierz zakres dat"],
-              ["sprzatanie", "Sprzątanie", "Po remoncie, przy wynajmie, przed świętami"],
+              ["sprzatanie", "Sprzątanie", "Po wykończeniu, przy wynajmie, przed świętami"],
             ] as const
           ).map(([value, label, hint]) => (
             <label
@@ -193,7 +199,9 @@ export function BookingForm() {
 
       <div className="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-start">
         <div>
-          <p className="label">{range ? "Termin wynajmu" : "Termin sprzątania"}</p>
+          <p className="label">
+            {range ? "Termin wynajmu" : kind === "sprzatanie" ? "Termin sprzątania" : "Preferowany termin rozpoczęcia prac"}
+          </p>
           <Calendar
             mode={range ? "range" : "single"}
             from={from}
@@ -226,6 +234,32 @@ export function BookingForm() {
               {/* TODO: maksymalna liczba = liczba urządzeń w ofercie */}
               <input id="ilosc" name="ilosc" type="number" min={1} max={10} defaultValue={1} required className="field" />
             </div>
+          ) : kind === "wykonczenie" ? (
+            <>
+              <div>
+                <label className="label" htmlFor="zakres">
+                  Zakres prac
+                </label>
+                <select id="zakres" name="zakres" required defaultValue="" className="field">
+                  <option value="" disabled>
+                    Wybierz…
+                  </option>
+                  <option>Kompleksowe wykończenie domu lub mieszkania</option>
+                  <option>Wykończenie łazienki</option>
+                  <option>Sufity podwieszane / adaptacja poddasza</option>
+                  <option>Gładzie i malowanie</option>
+                  <option>Gres, płytki lub panele</option>
+                  <option>Tynki dekoracyjne</option>
+                  <option>Inne</option>
+                </select>
+              </div>
+              <div>
+                <label className="label" htmlFor="metraz">
+                  Metraż <span className="font-normal text-muted">(m², opcjonalnie)</span>
+                </label>
+                <input id="metraz" name="metraz" type="number" min={1} max={2000} className="field" />
+              </div>
+            </>
           ) : (
             <>
             <div>
@@ -242,7 +276,7 @@ export function BookingForm() {
                 <option value="" disabled>
                   Wybierz…
                 </option>
-                <option>Po wykończeniu lub remoncie</option>
+                <option>Po wykończeniu</option>
                 <option>Przed lub po wynajmie</option>
                 <option>Przed świętami lub inną okazją</option>
                 <option>Inne</option>
@@ -264,7 +298,13 @@ export function BookingForm() {
               id="opis"
               name="opis"
               rows={4}
-              placeholder={range ? "Np. osuszanie wylewek, powierzchnia, piętro…" : "Np. rodzaj lokalu, zakres, mycie okien…"}
+              placeholder={
+                range
+                  ? "Np. osuszanie wylewek, powierzchnia, piętro…"
+                  : kind === "sprzatanie"
+                    ? "Np. rodzaj lokalu, zakres, mycie okien…"
+                    : "Np. stan deweloperski, dom czy mieszkanie, czy masz projekt…"
+              }
               className="field"
             />
           </div>

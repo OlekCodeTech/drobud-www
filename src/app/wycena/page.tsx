@@ -6,7 +6,7 @@ import { QuoteForm } from "@/components/forms";
 export const metadata: Metadata = {
   title: "Wycena — wyślij projekt i zdjęcia",
   description:
-    "Wyślij projekt, zdjęcia i opis prac. Oddzwonimy i przygotujemy wycenę wykończenia lub remontu. Wieluń i okolice.",
+    "Wyślij projekt, zdjęcia i opis prac. Oddzwonimy i przygotujemy wycenę wykończenia. Wieluń i okolice.",
   alternates: { canonical: "/wycena/" },
 };
 

@@ -4,9 +4,9 @@ import { formatDate, getPosts } from "@/lib/blog";
 import { Cta, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Blog — poradniki o remontach i wykończeniach",
+  title: "Blog — poradniki o wykończeniach wnętrz",
   description:
-    "Poradniki ekipy DroBud z Wielunia: wykończenie domu krok po kroku, remont łazienki, osuszanie tynków i wylewek, sprzątanie po remoncie.",
+    "Poradniki ekipy DroBud z Wielunia: wykończenie domu krok po kroku, wykończenie łazienki, osuszanie tynków i wylewek, sprzątanie po wykończeniu.",
   alternates: { canonical: "/blog/" },
 };
 
@@ -16,8 +16,8 @@ export default function Page() {
     <>
       <PageHero
         eyebrow="Blog"
-        title="Poradniki o remontach i wykończeniach"
-        lead="Praktyczna wiedza z budowy: kolejność prac, przygotowanie do remontu, osuszanie i sprzątanie."
+        title="Poradniki o wykończeniach wnętrz"
+        lead="Praktyczna wiedza z budowy: kolejność prac, przygotowanie do wykończenia, osuszanie i sprzątanie."
       />
       <Section>
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

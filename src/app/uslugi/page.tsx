@@ -3,7 +3,7 @@ import { services } from "@/data/services";
 import { Cta, PageHero, Section, ServiceCard } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Usługi wykończeniowe i remontowe",
+  title: "Usługi wykończeniowe",
   description:
     "Wykończenia domów i mieszkań pod klucz, łazienki, sufity podwieszane, adaptacja poddaszy, gładzie polimerowe, tynki dekoracyjne, gres, panele, osuszanie i sprzątanie — Wieluń i okolice.",
   alternates: { canonical: "/uslugi/" },
@@ -14,7 +14,7 @@ export default function Page() {
     <>
       <PageHero
         eyebrow="Usługi"
-        title="Usługi wykończeniowe i remontowe"
+        title="Usługi wykończeniowe"
         lead="Wykonujemy pojedyncze prace i kompleksowe wykończenia. Wybierz usługę, aby zobaczyć zakres."
       />
       <Section>
