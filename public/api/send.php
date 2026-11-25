@@ -5,8 +5,8 @@
  */
 
 // ---- KONFIGURACJA (uzupełnić przed wdrożeniem) ----
-const MAIL_TO      = 'drosinski96@wp.pl';          // TODO: nowy adres od klienta (w domenie drobudwielun.pl?)
-const MAIL_FROM    = 'formularz@drobudwielun.pl';  // adres w domenie strony (SPF Hostingera)
+const MAIL_TO      = 'biuro@drobudwielun.pl';      // skrzynka na Hostingerze
+const MAIL_FROM    = 'biuro@drobudwielun.pl';      // istniejąca skrzynka w domenie (Hostinger)
 const ALLOWED_HOST = 'drobudwielun.pl';            // formularze przyjmowane tylko z tej domeny (i www.)
 const MAX_FILES    = 8;
 const MAX_FILE     = 10 * 1024 * 1024;

@@ -11,7 +11,7 @@ export const site = {
   indexable: process.env.NEXT_PUBLIC_INDEX === "1",
   phone: "782 120 663",
   phoneHref: "tel:+48782120663",
-  email: "drosinski96@wp.pl", // TODO: docelowy adres na wyceny i rezerwacje
+  email: "biuro@drobudwielun.pl",
   // TODO: potwierdzić adres (FB/Google: Torowa 36, rejestry: Staw 1a)
   address: {
     street: "ul. Torowa 36",

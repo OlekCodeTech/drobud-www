@@ -84,11 +84,11 @@ rozbudowany tekst z nagłówkami H2, FAQ i schema, nie same kafelki.
 - Zespół: opisy 6 osób od klienta (25.11); zdjęcia pracownik-1 = Zbyszek, pracownik-2 = Tomek, pracownik-3 = Damian K.
 - Marki: Sendi i PRO to osobne firmy; Sendi bez logo (sendi.pl przekierowuje na spam) — wyświetlana nazwą; Nivel z białego logo przebarwiony na ciemno
 - Film z gali (v12) = `galaVideo` w `content.ts`: tylko w sekcjach wyróżnień (główna, zespół), nie w realizacjach
-- Do zmiany: e-mail firmy (`site.email` + `MAIL_TO` w send.php) — klient prosi o „nowy”, adres do ustalenia
+- E-mail firmy: biuro@drobudwielun.pl (`site.email` + `MAIL_TO`)
 
 ## Domeny (25.11.2026)
 
 - Główna: drobudwielun.pl (Hostinger). remontywielun.pl i wykonczeniawielun.pl dodać w hPanelu jako aliasy
   strony — `public/.htaccess` przekierowuje je 301 na drobudwielun.pl (także www i http → https)
-- `send.php`: MAIL_FROM formularz@drobudwielun.pl, ALLOWED_HOST drobudwielun.pl; MAIL_TO i `site.email`
-  czekają na nowy adres od klienta
+- `send.php`: MAIL_FROM biuro@drobudwielun.pl, ALLOWED_HOST drobudwielun.pl; MAIL_TO i `site.email`
+  = biuro@drobudwielun.pl (od 25.11.2026)
